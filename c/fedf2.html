@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="contenido"></div>
+
+    <script>
+        // Fetch del contenido de df2.html
+        fetch('https://xadavm.github.io/wefvhiwsevhddsj/c/df2.html')
+            .then(response => response.text())
+            .then(data => {
+                // Insertar el contenido en el div con id "contenido"
+                document.getElementById('contenido').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Hubo un error al cargar el contenido:', error);
+            });
+    </script>
+</body>
+</html>
