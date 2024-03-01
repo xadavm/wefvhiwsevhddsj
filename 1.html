@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lista de Canales de TV</title>
-  <link href="https://xadavm.github.io/xx/bootstrap.min.css" rel="stylesheet">
-  <link href="https://xadavm.github.io/xx/css.css" rel="stylesheet">
-  <script src="https://xadavm.github.io/xx/jquery-3.6.0.min.js"></script>
-  <script src="https://xadavm.github.io/xx/jquery.min.js"></script>
-  <script src="https://xadavm.github.io/xx/bootstrap.min.js"></script>
-  <script src="https://xadavm.github.io/xx/clappr.min.js"></script>
-  <script src="https://xadavm.github.io/xx/dash-shaka-playback.js"></script>
-  <script type="text/javascript" src="https://xadavm.github.io/xx/clappr-pip-plugin.js"></script>
-  <script type="text/javascript" src="https://xadavm.github.io/xx/level-selector.min.js"></script>
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="css.css" rel="stylesheet">
+  <script src="jquery-3.6.0.min.js"></script>
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="clappr.min.js"></script>
+  <script src="dash-shaka-playback.js"></script>
+  <script type="text/javascript" src="clappr-pip-plugin.js"></script>
+  <script src="level-selector.min.js"></script>
 </head>
 
 <body>
@@ -87,7 +87,7 @@
         $('.col-md-4[data-category="' + lastCategory + '"]').show();
       }
 
-      $.getJSON('https://xadavm.github.io/xx/1.json', function (data) {
+      $.getJSON('1.json', function (data) {
         var categories = [];
         data.forEach(function (channel) {
           if (!categories.includes(channel.categ)) {
@@ -183,7 +183,7 @@
           }
         }
       } else {
-        var modifiedUrl = 'https://xadavm.github.io/xx/jw.html?s=' + encodeURI(url) + '&key=' + key + '&kid=' + kid;
+        var modifiedUrl = 'jw.html?s=' + encodeURI(url) + '&key=' + key + '&kid=' + kid;
         window.location.href = modifiedUrl;
       }
 

@@ -98,7 +98,7 @@
     "embed":"true",
     "key": "",
     "url": "go:Smega",
-    "urlpc":" https://xadavm.github.io/xx/GA.html"
+    "urlpc":" /GA.html"
 
   },
 
@@ -110,7 +110,7 @@
     "kid": "",
     "key": "",
       "url": "go:S794",
-      "urlpc":" https://xadavm.github.io/xx/ne.html",
+      "urlpc":" /ne.html",
       "iframe":"no"
   },
   {
@@ -121,7 +121,7 @@
     "kid": "",
     "key": "",
       "url": "go:S795",
-      "urlpc":" https://xadavm.github.io/xx/no.html",
+      "urlpc":" /no.html",
       "iframe":"no"
   },
   {
@@ -335,8 +335,8 @@
     "key": "",
     "embed": "true",
 "iframe": "no",
-    "url": "https://xadavm.github.io/xx/c/df2.html",
-    "urlpc": "https://xadavm.github.io/xx/c/df2.html"
+    "url": "/c/df2.html",
+    "urlpc": "/c/df2.html"
   
   },
   {
@@ -347,7 +347,7 @@
     "kid": "",
     "key": "",
       "url": "go:S744",
-      "urlpc":" https://xadavm.github.io/xx/m.html",
+      "urlpc":" /m.html",
       "iframe":"no"
   },
   {
@@ -358,8 +358,8 @@
     "key": "",
     "embed": "true",
 "iframe": "no",
-    "url": "https://xadavm.github.io/xx/c/ca.html",
-    "urlpc": "https://xadavm.github.io/xx/c/ca.html"
+    "url": "/c/ca.html",
+    "urlpc": "/c/ca.html"
   
   },
   {
@@ -370,8 +370,8 @@
     "key": "",
     "embed": "true",
 "iframe": "no",
-    "url": "https://xadavm.github.io/xx/c/v.html",
-    "urlpc": "https://xadavm.github.io/xx/c/v.html"
+    "url": "/c/v.html",
+    "urlpc": "/c/v.html"
   
   },
   {
@@ -439,8 +439,8 @@
     "key": "",
     "embed": "true",
 "iframe": "no",
-    "url": "https://xadavm.github.io/xx/c/de.html",
-    "urlpc": "https://xadavm.github.io/xx/c/de.html"
+    "url": "/c/de.html",
+    "urlpc": "/c/de.html"
   
   },
   {
@@ -541,7 +541,7 @@
     "iframe":"yes",
     "kid": "",
     "key": "",
-      "urlpc":" https://xadavm.github.io/xx/s.html"
+      "urlpc":" /s.html"
 
   
   }
