@@ -3,6 +3,7 @@
     <script src="https://xadavm.github.io/wefvhiwsevhddsj/console-ban.min.js"></script>
 
   </head>
+
   <script>
     // default options
     ConsoleBan.init()
@@ -64,6 +65,7 @@
         <button id='unmute-btn' onclick='WSUnmute()' tabindex="0"></button>
     </div>
     <script>
+	
         var meta = document.createElement('meta');
         meta.name = 'referrer';
         meta.content = 'no-referrer';
@@ -73,6 +75,9 @@
             document.getElementById('unmute-btn').style.display = 'none';
             player.setVolume(100);
         }
+		
+		//Puedes usar este:
+
 
         // Manejar la tecla Enter
         document.getElementById('unmute-btn').addEventListener('keydown', function (e) {
