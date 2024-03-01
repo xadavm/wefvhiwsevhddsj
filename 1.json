@@ -98,7 +98,7 @@
     "embed":"true",
     "key": "",
     "url": "go:Smega",
-    "urlpc":" /GA.html"
+    "urlpc":"/c/GA.html"
 
   },
 
@@ -110,7 +110,7 @@
     "kid": "",
     "key": "",
       "url": "go:S794",
-      "urlpc":" /ne.html",
+      "urlpc":"/c/ne.html",
       "iframe":"no"
   },
   {
@@ -121,7 +121,7 @@
     "kid": "",
     "key": "",
       "url": "go:S795",
-      "urlpc":" /no.html",
+      "urlpc":"/c/no.html",
       "iframe":"no"
   },
   {
@@ -201,7 +201,7 @@
     "key": "",
     "embed":"true",
     "url": "go:Sudlp",
-    "urlpc": "https://laligatech-live-usp-cwr.akamaized.net/live/clubes247-01/clubes247-01.isml/hdntl=exp=1709322467~acl=%2f*~data=hdntl~hmac=5f1706ce0cd47f4e8200c00893f421778ccafc0bc2af5111040aea5038be69a3/clubes247-01-audio_track_0_0_spa=96000-video_track=6000000.m3u8",
+    "urlpc": "https://laligatech-live-usp-cwr.akamaized.net/live/clubes247-01/clubes247-01.isml/hdntl=exp=1709407786~acl=%2f*~data=hdntl~hmac=51bcf2cb6f78b2dd916f9bfb4c9da57fca955e04516e46542bad7700a7111d33/clubes247-01-audio_track_0_0_spa=96000-video_track=6000000.m3u8",
     "iframe":"no"
 
   },
@@ -347,7 +347,7 @@
     "kid": "",
     "key": "",
       "url": "go:S744",
-      "urlpc":" /m.html",
+      "urlpc":"/c/m.html",
       "iframe":"no"
   },
   {
