@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Título de tu página</title>
+  <meta name="robots" content="noindex">
+  <script src="https://xadavm.github.io/xx/java/1.js"></script>
+  <script src="https://xadavm.github.io/xx/java/2.js"></script>
+  <script src="https://xadavm.github.io/xx/java/3.js"></script>
+  <script src="https://xadavm.github.io/xx/java/4.js"></script>
+  <script src="https://xadavm.github.io/xx/java/5.js"></script>
+  <script src="https://xadavm.github.io/xx/java/6.js"></script>
+  <script src="https://xadavm.github.io/xx/java/7.js"></script>
+  <script src="https://xadavm.github.io/xx/java/8.js"></script>
+  <script type="text/javascript" src="https://xadavm.github.io/xx/quality-selector.js"></script>
+  <script src="https://xadavm.github.io/xx/console-ban.min.js"></script>
+
+</head>
+<script>
+  // default options
+  ConsoleBan.init()
+  // custom options
+  ConsoleBan.init({
+    redirect: '/'
+  })
+</script>
+</head>
+<body>
+  <div id="player"></div>
+  <script>
+    // Función para solicitar el modo de pantalla completa
+    function requestFullscreen() {
+      var docEl = document.documentElement;
+      if (docEl.requestFullscreen) {
+        docEl.requestFullscreen();
+      } else if (docEl.mozRequestFullScreen) {
+        docEl.mozRequestFullScreen();
+      } else if (docEl.webkitRequestFullscreen) {
+        docEl.webkitRequestFullscreen();
+      } else if (docEl.msRequestFullscreen) {
+        docEl.msRequestFullscreen();
+      }
+    }
+
+    // Llamar a la función para activar la pantalla completa
+    requestFullscreen();
+
+    // Función para reproducir el video automáticamente
+    function playVideo() {
+      player.play();
+    }
+
+    // Asignar la función playVideo() al evento click en cualquier parte de la pantalla
+    document.body.addEventListener('click', playVideo);
+    
+    // Obtener el botón de reproducción
+    var posterButton = document.querySelector('.player-poster.clickable');
+
+    // Si se encuentra el botón, simular clic en él para iniciar la reproducción
+    if (posterButton) {
+      posterButton.click();
+    }
+
+    var player = new Clappr.Player({
+        source: 'https://tvup-live.akamaized.net/laligatv/laligatv.mpd',
+      mimeType: 'application/dash+xml',
+      height: '100%',
+      width: '100%',
+      autoPlay: true,
+      mute:false,
+      plugins: [LevelSelector, DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin, Clappr.MediaControl, QualitySelector],
+      shakaConfiguration: {
+        drm: {
+          clearKeys: {
+            "aa3de450728e50edbcd47ab039200f6e":"4b1b1b8eb7585295fc6c9ad054bac647",
+                       "3884d18d872d50b59ceaf03530cddbcc":"45f5ad675bf4d9056042a90123302c0f",
+                       "3896c18a4fcd54efabaf9b1bdb1830f5":"e3bf13c8d463af5e5bb567a1c3ea1725",
+          },
+        },
+        qualitySelectorConfig: {defaultQuality: 0} // start with quality ID 0 or lowest
+      },
+      shakaOnBeforeLoad: function (shaka_player) {},
+      parentId: '#player',
+    });
+
+    // Deshabilitar el menú contextual
+    document.oncontextmenu = function() { return false; };
+  </script>
+  <style>
+    /* Estilos CSS aquí */
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #player {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Para ocultar barras de desplazamiento */
+    }
+
+    #player-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black; /* Fondo negro para el reproductor */
+    }
+
+    #player {
+        width: 100% !important;
+        height: 100% !important;
+    }
+</style>
+<script src="jwplayer.js"></script>
+<script src="https://xadavm.github.io/xx/console-ban.min.js"></script>
+<script> 
+  // default options
+  ConsoleBan.init();
+  // custom options
+  ConsoleBan.init({
+    redirect: '/'
+  });
+</script>
+<script> 
+    jwplayer.key = 'XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';
+</script>
+</head>
+<body>
+<script type="text/javascript">
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+    var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+let Source = getParameterByName('s');
+let key = getParameterByName('key');
+let keyId = getParameterByName('kid');
+let getLang = getParameterByName('lang');
+if (Source == "#") {alert('Vuelve a la página anterior');}
+</script>
+<div id="player-container">
+    <div id="player"></div>
+</div>
+<script>
+// Función para activar el modo de pantalla completa
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+}
+
+// Llamamos a la función toggleFullscreen al hacer clic en el reproductor de video
+document.getElementById("player").addEventListener("click", function() {
+    toggleFullscreen();
+});
+
+// Simulamos la pulsación de la tecla F11 para activar automáticamente el modo de pantalla completa
+window.addEventListener("load", function() {
+    document.body.addEventListener("keydown", function(e) {
+        if (e.key === "F11") {
+            toggleFullscreen();
+        }
+    });
+});
+
+var data = jwplayer("player");
+
+var idParameter = getParameterByName('id');
+data.setup({
+    playlist: [{
+        "sources": [{
+            "default": false,
+            "title": "Personaltv",
+            "type": "dash",
+            "file": Source,
+            "drm": {
+                "clearkey": { "keyId": keyId, "key": key }
+            },
+            "label": "0"
+        }]
+    }],
+    width: "100%",
+    height: "100%",
+    aspectratio: "16:9",
+    autostart: true,
+    cast: {},
+    sharing: {},
+    controls: true, // Mostrar controles de reproducción
+    displaytitle: true // Mostrar título del video
+});  
+
+data.on("play", function (e) {
+    data.setCurrentAudioTrack(1);
+});
+
+function simulateVolumeUp() {
+    var event = new KeyboardEvent('keydown', {
+        key: 'ArrowUp'
+    });
+    document.dispatchEvent(event);
+    setTimeout(function() {
+        document.dispatchEvent(event);
+    }, 900); // Esperamos 500 milisegundos antes de disparar el evento por segunda vez
+}
+
+// Simular el evento de teclado de volumen hacia arriba después de un breve retraso
+setTimeout(simulateVolumeUp, 1200);
+</script>
+</body>
+</html>

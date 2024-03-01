@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <script src="https://xadavm.github.io/xx/console-ban.min.js"></script>
+
+  </head>
+  <script>
+    // default options
+    ConsoleBan.init()
+    // custom options
+    ConsoleBan.init({
+      redirect: '/'
+    })
+  </script>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Para ocultar barras de desplazamiento */
+        }
+
+        #player-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black; /* Fondo negro para el reproductor */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1; /* Para estar por encima del reproductor */
+        }
+
+        #player {
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 0; /* Atrás del botón */
+        }
+
+        #unmute-btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            opacity: 0.8;
+            font-weight: 700;
+            font-family: sans-serif;
+            z-index: 2; /* Para estar delante del reproductor */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="player-container">
+        <div id='player'>
+            <iframe width="100%" height="100%" src="http://hoyfutbol.info/player/10/71" title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen sandbox="allow-same-origin allow-scripts"></iframe>
+        </div>
+        <button id='unmute-btn' onclick='WSUnmute()' tabindex="0"></button>
+    </div>
+    <script>
+        var meta = document.createElement('meta');
+        meta.name = 'referrer';
+        meta.content = 'no-referrer';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+
+        function WSUnmute() {
+            document.getElementById('unmute-btn').style.display = 'none';
+            player.setVolume(100);
+        }
+
+        // Manejar la tecla Enter
+        document.getElementById('unmute-btn').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                WSUnmute();
+            }
+        });
+    </script>
+</body>
+
+</html>

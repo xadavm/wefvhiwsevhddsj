@@ -1,0 +1,548 @@
+[
+  {
+    "name": "La 1",
+    "categ": "TDT",
+    "image": "https://i.imgur.com/o9T8uzT.png",
+ 
+    "embed": "true",
+    "url": "go:S1",
+    "urlpc": "https://ztnr.rtve.es/ztnr/1688877.m3u8",
+    "iframe":"yes"
+  },
+
+  {
+    "name": "La 2",
+    "categ": "TDT",
+    "image": "https://i.ibb.co/V2RyY0D/LA2.png",
+    "kid": "",
+    "key": "",
+    "embed": "true",
+    "url": "go:S2",
+    "urlpc": "https://ztnr.rtve.es/ztnr/1688885.m3u8",
+    "iframe":"yes"
+
+  },
+
+  {
+    "name": "Antena 3",
+    "image": "https://i.imgur.com/qO4vsck.png",
+    "categ": "TDT",
+    "kid": "8a9e74b80c7cefa177926fc90eb05988",
+    "key": "54e2cb64384e73b37b19d8c50e9479a4",
+        "url": "https://ott.zapitv.com/live/eds_c2/test/dash_live_enc/test.mpd"
+  },
+  {
+    "name": "Cuatro",
+    "image": "https://i.imgur.com/dfdGu2L.png",
+    "categ": "TDT",
+    "kid": "257fafffad77ccb5b8224d8fac6c9d62",
+    "key": "81ebfc96640b0c8446c232f198b97dec",
+        "url": "https://ott.zapitv.com/live/eds_c2/cuatro/dash_live_enc/cuatro.mpd"
+  },
+  {
+    "name": "Telecinco",
+    "image": "https://i.imgur.com/cwegp7o.png",
+    "categ": "TDT",
+    "kid": "6e1dbacf4b932a11cd6cecb741def23d",
+    "key": "0375536d6e512003972d1d6ea1f4d7c0",
+        "url": "https://ott.zapitv.com/live/eds_c2/telecinco/dash_live_enc/telecinco.mpd"
+  },
+  {
+    "name": "La Sexta",
+    "image": "https://i.imgur.com/AyIdjFh.png",
+    "categ": "TDT",
+    "kid": "239e5526ecb62d7b41c97641ea486549",
+    "key": "93bfa21ee2211c271b7f0e1944a87818",
+        "url": "https://ott.zapitv.com/live/eds_c2/la_sexta/dash_live_enc/la_sexta.mpd"
+  },
+  {
+    "name": "TV Canaria",
+    "image": "https://i.imgur.com/4UPGkPt.png",
+    "categ": "TDT",
+    "kid": "",
+    "key": "",
+    "embed": "true",
+    "url": "go:Scan",
+    "urlpc": "https://www.youtube-nocookie.com/embed/6LlZXt8nk4s?rel=0&amp;showinfo=0&autoplay=1"
+
+  },
+  {
+    "name": "24h",
+    "image": "https://i.imgur.com/DsyyA19.png",
+    "categ": "TDT",
+    "kid": "",
+    "key": "",
+    "embed": "true",
+    "url": "go:S24h",
+    "iframe":"yes",
+    "urlpc": "https://ztnr.rtve.es/ztnr/1694255.m3u8"
+
+  },
+  {
+    "name": "Teledeporte",
+    "image": "https://i.imgur.com/4xMuW5B.png",
+    "categ": "TDT",
+    "kid": "",
+    "key": "",
+    "embed": "true",
+    "url": "go:Stdp",
+    "iframe":"no",
+    "urlpc": "https://ztnr.rtve.es/ztnr/1712295.m3u8"
+
+  },
+  {
+    "name": "MEGA",
+    "image": "https://i.imgur.com/5gbBec3.png",
+    "categ": "TDT",
+    "kid": "",
+    "embed":"true",
+    "key": "",
+    "url": "go:Smega",
+    "urlpc":" https://xadavm.github.io/xx/GA.html"
+
+  },
+
+  {
+    "name": "Neox",
+    "image": "https://i.imgur.com/3fVhgge.png",
+    "categ": "TDT",
+    "embed":"true",
+    "kid": "",
+    "key": "",
+      "url": "go:S794",
+      "urlpc":" https://xadavm.github.io/xx/ne.html",
+      "iframe":"no"
+  },
+  {
+    "name": "Nova",
+    "image": "https://i.imgur.com/U24KHpy.png",
+    "categ": "TDT",
+    "embed":"true",
+    "kid": "",
+    "key": "",
+      "url": "go:S795",
+      "urlpc":" https://xadavm.github.io/xx/no.html",
+      "iframe":"no"
+  },
+  {
+    "name": "FDF",
+    "image": "https://i.imgur.com/98yI5qp.png",
+    "categ": "TDT",
+    "kid": "5032cdcff452f508b44fe895808b9cee",
+    "key": "51c7c5b35ad30d4d8552143f19fd5e11",
+    "url": "https://ott.zapitv.com/live/eds_c2/fdf/dash_live_enc/fdf.mpd"
+  },
+  {
+    "name": "Divinity",
+    "image": "https://i.imgur.com/x1COrUI.png",
+    "categ": "TDT",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url": "go:Sdi",
+    "urlpc": "https://spa-ha-p004.cdn.masmediatv.es/SVoriginOperatorEdge/smil:18_HD.smil/manifest.m3u8",
+    "iframe":"no"
+
+  },
+  {
+    "name": "Energy",
+    "image": "https://i.imgur.com/9gMcb2g.png",
+    "categ": "TDT",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url": "go:Sen",
+    "urlpc": "https://spa-ha-p004.cdn.masmediatv.es/SVoriginOperatorEdge/smil:19_HD.smil/manifest.m3u8",
+    "iframe":"no"
+
+  },
+  {
+    "name": "beMad",
+    "image": "https://i.imgur.com/YFsK5aH.png",
+    "categ": "TDT",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url": "go:Sbe",
+    "urlpc": "https://spa-ha-p004.cdn.masmediatv.es/SVoriginOperatorEdge/smil:20_HD.smil/manifest.m3u8",
+    "iframe":"no"
+
+  },
+  {
+    "name": "dmax",
+    "image": "https://i.imgur.com/5qLz0pY.png",
+    "categ": "TDT",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url":"go:Sdmax",
+    "urlpc": "https://spa-ha-p004.cdn.masmediatv.es/SVoriginOperatorEdge/smil:23_HD.smil/manifest.m3u8",
+    "iframe":"no"
+
+  },
+  {
+    "name": "Gol Play",
+    "image": "https://i.imgur.com/3pDfFjp.png",
+    "categ": "TDT",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url": "go:Sgol",
+    "urlpc": "https://spa-ha-p004.cdn.masmediatv.es/SVoriginOperatorEdge/smil:5_HD.smil/manifest.m3u8",
+    "iframe":"no"
+
+  },
+
+  {
+    "name": "UDTV",
+    "image": "https://i.imgur.com/gkMx1KL.png",
+    "categ": "TDT",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url": "go:Sudlp",
+    "urlpc": "https://laligatech-live-usp-cwr.akamaized.net/live/clubes247-01/clubes247-01.isml/hdntl=exp=1709322467~acl=%2f*~data=hdntl~hmac=5f1706ce0cd47f4e8200c00893f421778ccafc0bc2af5111040aea5038be69a3/clubes247-01-audio_track_0_0_spa=96000-video_track=6000000.m3u8",
+    "iframe":"no"
+
+  },
+  {
+    "name": "Real Madrid TV",
+    "image": "https://i.imgur.com/DfKsZDX.png",
+    "categ": "TDT",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url": "go:Srma",
+    "urlpc": "https://rmtv.akamaized.net/hls/live/2043153/rmtv-es-web/master.m3u8",
+    "iframe":"no"
+
+  },
+ 
+  {
+    "name": "FOX",
+    "image": "https://i.imgur.com/6MExAzf.png",
+    "categ": "Cine",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url": "go:Sfo",
+    "urlpc": "https://fibergy.cdn.masmediatv.es/SVoriginOperatorDistrib001/smil:248_HD.smil/manifest.m3u8",
+    "iframe":"no"
+
+  },
+  {
+    "name": "Warner TV",
+    "image": "https://i.imgur.com/DKB01qY.png",
+    "categ": "Cine",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url": "go:Swa",
+    "urlpc": "https://fibergy.cdn.masmediatv.es/SVoriginOperatorDistrib001/smil:250_HD.smil/manifest.m3u8",
+    "iframe":"no"
+  },
+  {
+    "name": "AXN",
+    "image": "https://i.imgur.com/tNcwmZL.png",
+    "categ": "Cine",
+    "kid": "17b4b5cdbb271e7f6d97e38a04a2d27f",
+    "key": "75aef15c20e7a17c64b71d2f840a6f5d",
+    "url": "https://ott.zapitv.com/live/eds_c2/axn/dash_live_enc/axn.mpd"
+  },
+
+  {
+    "name": "AXN Movies",
+    "image": "https://i.imgur.com/UEOFwZB.png",
+    "categ": "Cine",
+    "kid": "f9e4be09926c262effa2b5381ae3553d",
+    "key": "d630e04e0c5e3f98dc38840be1c1dd4c",
+    "url": "https://ott.zapitv.com/live/eds_c2/axn_white/dash_live_enc/axn_white.mpd"
+  },
+
+  {
+    "name": "AMC",
+    "image": "https://i.imgur.com/kZAHX3i.png",
+    "categ": "Cine",
+    "kid": "ffec3dec40cb61a45e969c84977615ef",
+    "key": "c6fbbe1e506a4323d3046b30731c9d52",
+    "url": "https://ott.zapitv.com/live/eds_c2/amc_hd/dash_live_enc/amc_hd.mpd"
+  },
+  {
+    "name": "Syfy",
+    "image": "https://i.imgur.com/RNh7aCp.png",
+    "categ": "Cine",
+    "kid": "95ec1e26e80c38258a30101d06c8cbf7",
+    "key": "0d0df5189256c0bf32c0cd0976bac5bd",
+    "url": "https://ott.zapitv.com/live/eds_c2/syfy/dash_live_enc/syfy.mpd"
+  },
+  {
+    "name": "Dazn LaLiga",
+    "image": "https://i.imgur.com/zlC5JTt.png",
+    "categ": "Deportes",
+    "kid": "82f8e2a17dac44c0a18f660479349c59",
+    "key": "1b144f73e6fefe91cd05f850e2b589d0",
+    "url": "https://dcf-ak-livedazn.akamaized.net/dashrdm/dazn-linear-043/stream.mpd"
+  },
+  {
+    "name": "Dazn LaLiga (Backup)",
+    "image": "https://i.imgur.com/zlC5JTt.png",
+    "categ": "Deportes",
+    "kid": "43d1c3b25207ff38b22ccfe17d302367",
+    "key": "7b1f85f6e81059473b114c16a25c829a",
+    "url": "https://live.ll.ww.aiv-cdn.net/OTTB/dub-nitro/live/clients/dash/enc/wjgklbtvhh/out/v1/659736a1e24c40e4865a80ffd75e7de7/cenc.mpd"
+  },
+  {
+    "name": "Dazn 1 ",
+    "image": "https://i.imgur.com/3LvZ7mz.png",
+    "categ": "Deportes",
+    "kid": "82f8e2a17dac44c0a18f660479349c59",
+    "key": "1b144f73e6fefe91cd05f850e2b589d0",
+    "url": "https://dcf-ak-livedazn.akamaized.net/dashrdm/dazn-linear-037/stream.mpd?p=web"
+  },
+  {
+    "name": "Dazn 1 (Backup)",
+    "image": "https://i.imgur.com/3LvZ7mz.png",
+    "categ": "Deportes",
+    "kid": "44dd9cd370b08a868ead115fe84ecfde",
+    "key": "bff19ab0a51cf14e848389b152913fd0",
+    "url": "https://ottb.live.cf.ww.aiv-cdn.net/dub-nitro/live/clients/dash/enc/bmnelo5c7a/out/v1/3ce2cdc4589f46189322bd3717c77957/cenc.mpd"
+  },
+  {
+    "name": "Dazn 2",
+    "image": "https://i.imgur.com/NpGZEke.png",
+    "categ": "Deportes",
+    "kid": "82f8e2a17dac44c0a18f660479349c59",
+    "key": "1b144f73e6fefe91cd05f850e2b589d0",
+    "url": "https://dcf-ak-livedazn.akamaized.net/dashrdm/dazn-linear-038/stream.mpd?p=web"
+  
+  },
+  
+  {
+    "name": "Dazn F1",
+    "image": "https://i.imgur.com/TK4eLQ0.png",
+    "categ": "Deportes",
+    "kid": "82f8e2a17dac44c0a18f660479349c59",
+    "key": "1b144f73e6fefe91cd05f850e2b589d0",
+    "url": "https://dcf-ak-livedazn.akamaized.net/dashrdm/dazn-linear-016/stream.mpd?p=web"
+  
+  },
+
+  {
+    "name": "Dazn F1 backup",
+    "image": "https://i.imgur.com/TK4eLQ0.png",
+    "categ": "Deportes",
+    "kid": "",
+    "key": "",
+    "embed": "true",
+"iframe": "no",
+    "url": "https://xadavm.github.io/xx/c/df2.html",
+    "urlpc": "https://xadavm.github.io/xx/c/df2.html"
+  
+  },
+  {
+    "name": "M+Liga",
+    "image": "https://i.imgur.com/PvmKHau.png",
+    "categ": "Deportes",
+    "embed":"true",
+    "kid": "",
+    "key": "",
+      "url": "go:S744",
+      "urlpc":" https://xadavm.github.io/xx/m.html",
+      "iframe":"no"
+  },
+  {
+    "name": "M+ Liga de Campeones",
+    "image": "https://i.imgur.com/pA2R05z.png",
+    "categ": "Deportes",
+    "kid": "",
+    "key": "",
+    "embed": "true",
+"iframe": "no",
+    "url": "https://xadavm.github.io/xx/c/ca.html",
+    "urlpc": "https://xadavm.github.io/xx/c/ca.html"
+  
+  },
+  {
+    "name": "#VAMOS",
+    "image": "https://i.imgur.com/OXNcnxF.png",
+    "categ": "Deportes",
+    "kid": "",
+    "key": "",
+    "embed": "true",
+"iframe": "no",
+    "url": "https://xadavm.github.io/xx/c/v.html",
+    "urlpc": "https://xadavm.github.io/xx/c/v.html"
+  
+  },
+  {
+    "name": "Liga Hypermotion",
+    "image": "https://i.imgur.com/vkSKZO7.png",
+    "categ": "Deportes",
+    "kid": "82f8e2a17dac44c0a18f660479349c59",
+    "key": "1b144f73e6fefe91cd05f850e2b589d0",
+    "url": "https://dcf-ak-livedazn.akamaized.net/dashrdm/dazn-linear-040/stream.mpd?p=web"
+
+  },
+  {
+    "name": "Liga Hypermotion",
+    "image": "https://i.imgur.com/vkSKZO7.png",
+    "categ": "Deportes",
+    "kid": "6d08b265a6639e32da7c880d5491e3d2",
+    "key": "0c92556ca14b95f367993710e7cfbc94",
+    "url": "https://ottb.live.cf.ww.aiv-cdn.net/dub-nitro/live/clients/dash/enc/tu06vubgf9/out/v1/7668f47d28e345979c072e361f3d3ce3/cenc.mpd"
+
+  },
+  
+  {
+    "name": "Liga Hypermotion 2",
+    "image": "https://i.imgur.com/AFWnJf1.png",
+    "categ": "Deportes",
+    "kid": "0b1fdeaee3ffc51e9a66cf1938d57aaf",
+    "key": "28e3cb88ab7b476b81ab8aa0624c4d71",
+    "url": "https://live.ll.ww.aiv-cdn.net/OTTB/dub-nitro/live/clients/dash/enc/woujvkfnmn/out/v1/141b52f08a1e4e97850219729ee48dc8/cenc.mpd"
+
+  },
+  {
+    "name": "Liga Hypermotion 3",
+    "image": "https://i.imgur.com/SSSqKqi.png",
+    "categ": "Deportes",
+    "kid": "d8235cccf08d0ff149a20dfcd11ff68b",
+    "key": "e8ea3a1ae6892eb76a73dc1b14d216d6",
+    "url": "https://live.ll.ww.aiv-cdn.net/OTTB/dub-nitro/live/clients/dash/enc/ry1hll2vi2/out/v1/7597903045b6429d8c9ef041b2ad9d98/cenc.mpd"
+
+  },
+  {
+    "name": "EuroSport 1",
+    "image": "https://i.imgur.com/QZGwMlP.png",
+    "categ": "Deportes",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url": "go:Seuro1",
+    "urlpc": ""
+
+  },
+  {
+    "name": "EuroSport 1",
+    "image": "https://i.imgur.com/QZGwMlP.png",
+    "categ": "Deportes",
+    "kid": "82f8e2a17dac44c0a18f660479349c59",
+    "key": "1b144f73e6fefe91cd05f850e2b589d0",
+    "url": "https://dcf-ak-livedazn.akamaized.net/dashrdm/dazn-linear-031/stream.mpd?p=web&dazm-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJleHAiOjE3MDU4ODg1ODIsImtpZCI6IjIwMjIxMTIzIiwicGF0aF9kIjoyLCJwYXRoIjoiNzE1N2E4Yzc3M2FlZTNhMDQyNTIyZWU5NGYxZWQ5MzZhMGYxMzg3NCIsImdlbyI6InB0IiwiaWF0IjoxNzA1ODQ1MzgyfQ"
+  
+  },
+  {
+    "name": "M+ Deportes",
+    "image": "https://i.imgur.com/jk8fZrx.png",
+    "categ": "Deportes",
+    "kid": "",
+    "key": "",
+    "embed": "true",
+"iframe": "no",
+    "url": "https://xadavm.github.io/xx/c/de.html",
+    "urlpc": "https://xadavm.github.io/xx/c/de.html"
+  
+  },
+  {
+    "name": "EuroSport 2",
+    "image": "https://i.imgur.com/ZLhUOxM.png",
+    "categ": "Deportes",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url": "go:Seuro2",
+    "urlpc": ""
+
+  },
+  {
+    "name": "EuroSport 2",
+    "image": "https://i.imgur.com/ZLhUOxM.png",
+    "categ": "Deportes",
+    "kid": "82f8e2a17dac44c0a18f660479349c59",
+    "key": "1b144f73e6fefe91cd05f850e2b589d0",
+    "url": "https://dcf-ak-livedazn.akamaized.net/dashrdm/dazn-linear-032/stream.mpd?p=web&dazm-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJleHAiOjE3MDU4ODg1ODIsImtpZCI6IjIwMjIxMTIzIiwicGF0aF9kIjoyLCJwYXRoIjoiNzE1N2E4Yzc3M2FlZTNhMDQyNTIyZWU5NGYxZWQ5MzZhMGYxMzg3NCIsImdlbyI6InB0IiwiaWF0IjoxNzA1ODQ1MzgyfQ"
+  
+  },
+
+  {
+    "name": "beIN Sports XTRA Ñ",
+    "image": "https://i.imgur.com/TTTIALT.png",
+    "categ": "Extranjeros",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url": "go:Sbein" ,
+     "urlpc": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/bein-sports-xtra-en-espanol/playlist.m3u8",
+     "iframe":"no"
+
+  
+  },
+  {
+    "name": "ESPN",
+    "image": "https://i.imgur.com/1gUeNxk.png",
+    "categ": "Extranjeros",
+    "kid": "e884b711ab111beb8a7ba1e7bcbdc9bf",
+    "key": "cb89ee3961599e3e648a5aad60895f34",
+    "url": "https://chromecast.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc_2A/ESPN2HD.mpd"
+
+
+  
+  },
+  {
+    "name": "ESPN 2",
+    "image": "https://i.imgur.com/pukBW0U.png",
+    "categ": "Extranjeros",
+    "kid": "65a5bfa3c7a72dde60be9b0c7406c8fc",
+    "key": "0b40ae9f78a7bac3b57ecbf72d3c081e",
+    "url": "https://edge-vod02-sl.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc/ESPN2_Arg.mpd"
+
+
+  
+  },
+  {
+    "name": "ESPN 3",
+    "image": "https://i.imgur.com/BOVzPh2.png",
+    "categ": "Extranjeros",
+    "kid": "f4c9f97e2a36feab0e5077f2b44cbc4e",
+    "key": "f4c9f97e2a36feab0e5077f2b44cbc4e",
+    "url": "https:///edge-vod02-sl.cvattv.com.ar/live/c3eds/ESPN3/SA_Live_dash_enc/ESPN3.mpd"
+
+
+  
+  },
+  {
+    "name": "FOX SPORTS",
+    "image": "https://i.imgur.com/x7e3jen.png",
+    "categ": "Extranjeros",
+    "kid": "cbc2a0c7a38df0aa3333cd71841d3b0d",
+    "key": "aac61b730e2ac1df23f1e872e7541c1b",
+    "url": "https:///edge-vod02-sl.cvattv.com.ar/live/c3eds/FoxSports/SA_Live_dash_enc/FoxSports.mpd"
+
+
+  
+  },
+  {
+    "name": "TNT Sports",
+    "image": "https://i.imgur.com/DjTKm3r.png",
+    "categ": "Extranjeros",
+    "kid": "bc80fa3da696e503f940fde5f681a1c5",
+    "key": "ea46e4e9f1132e8dd71fb77f7d55058a",
+    "url": "https:///edge-live02-mun.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_2A/TNT_Sports_HD.mpd"
+
+
+  
+  },
+  {
+    "name": "sky Sports F1",
+    "image": "https://i.imgur.com/KxWYKDv.png",
+    "categ": "Extranjeros",
+    "embed": "true",
+    "url": "go:Sskyf1",
+    "iframe":"yes",
+    "kid": "",
+    "key": "",
+      "urlpc":" https://xadavm.github.io/xx/s.html"
+
+  
+  }
+]

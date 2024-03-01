@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://xadavm.github.io/xx/claprrr.js"></script>
+    <script src="https://xadavm.github.io/xx/mux.min.js"></script>
+    <script src='https://xadavm.github.io/xx/level-selector.min.js'></script>
+    <script src='https://xadavm.github.io/xx/clappr-chromecast-plugin.min.js'></script>
+    <script src='https://xadavm.github.io/xx/clappr-pip.min.js'></script>
+    <script src='https://xadavm.github.io/xx/clappr-playback-rate-plugin.min.js'></script>
+    <script src="https://xadavm.github.io/xx/shaka-player.compiled.min.js"></script>
+    <script src="https://xadavm.github.io/xx/dash-shaka-playback.external.min.js"></script>
+    <script src="https://xadavm.github.io/xx/cdnbye-shaka@latest"></script>
+    <script src="https://xadavm.github.io/xx/jquery.min.js"></script>
+    <script src="https://xadavm.github.io/xx/console-ban.min.js"></script>
+
+  </head>
+  <script>
+    // default options
+    ConsoleBan.init()
+    // custom options
+    ConsoleBan.init({
+      redirect: '/'
+    })
+  </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Para ocultar barras de desplazamiento */
+        }
+
+        #player-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black; /* Fondo negro para el reproductor */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1; /* Para estar por encima del reproductor */
+        }
+
+        #player {
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 0; /* Atrás del botón */
+        }
+
+        #unmute-btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            opacity: 0.8;
+            font-weight: 700;
+            font-family: sans-serif;
+            z-index: 2; /* Para estar delante del reproductor */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="player-container">
+        <div id='player'></div>
+        <button id='unmute-btn' onclick='WSUnmute()' tabindex="0"></button>
+    </div>
+
+    <script>
+        var meta = document.createElement('meta');
+        meta.name = 'referrer';
+        meta.content = 'no-referrer';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+
+        function WSUnmute() {
+            document.getElementById('unmute-btn').style.display = 'none';
+            player.setVolume(100);
+        }
+
+        // Manejar la tecla Enter
+        document.getElementById('unmute-btn').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                WSUnmute();
+            }
+        });
+
+        var player = new Clappr.Player({
+          source: "https://tvup-live.akamaized.net/mega6/mega6.mpd",    
+            autoPlay: true, // Set autoplay (with capital 'P')
+            mute: true, // Set player to mute initially
+            mimeType: 'application/dash+xml',
+            height: '100%',
+            width: '100%',
+            plugins: [DashShakaPlayback, ChromecastPlugin, ClapprPip.PipButton, ClapprPip.PipPlugin],
+            chromecast: {
+                appId: 'PersonalTV',
+                contentType: 'video/mp4',
+            },
+            shakaConfiguration: {
+                drm: {
+                  "clearKeys": {
+                     '17c96fff5b3656e3973b2431d54740e3':'4ea5aa764f7806b1bc9d5d70dc30f953','d7929e94a9035f8eb174edcd585e33da':'843ae6087cb1c7897107ed477f12ad07','a5bcd9e88a9f56c198ffbdd1057a701d':'bdffe57e1abd9ce12c400da3b2e5d3ae'
+                }
+                },
+                preferredAudioLanguage: 'es-ES',
+            },
+            shakaOnBeforeLoad: function(shaka_player) {},
+            parentId: '#player',
+        });
+    </script>
+</body>
+</html>

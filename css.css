@@ -1,0 +1,173 @@
+body {
+  background-color: #f8f9fa;
+}
+.card {
+ display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  min-height: 200px; /* Establecer una altura mínima para las cartas */
+}
+.card-body {
+  flex-grow: 1; /* Hacer que el cuerpo de la carta ocupe el espacio restante */
+}
+
+/* Elimina el hover para el primer canal al cargar la página */
+.first-channel .card:hover {
+  transform: none;
+  background-color: transparent;
+}
+
+/* Estilos para el botón de salida */
+#exitButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* Agregar transición para cambio de color y transformación */
+}
+
+#exitButton:hover {
+  background-color: darkred;
+  /* Cambiar el color de fondo al pasar el cursor */
+}
+
+#exitButton:focus {
+  outline: none;
+  /* Eliminar el contorno al enfocar */
+}
+
+.card:hover,
+.card:focus {
+  /* Aplicar estilo al hacer hover o foco */
+  transform: translateY(-5px);
+  background-color: yellow;
+  /* Cambiar el fondo a amarillo */
+}
+
+.card-img {
+  width: auto;
+  height: 100%; /* Establecer una altura fija para la imagen */
+  min-height: 200px;
+  max-height: 400px;
+  min-width: 100px;
+  max-width: 200px;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  display: block; /* Asegura que la imagen sea un elemento de bloque */
+  margin: auto; /* Centra horizontalmente */
+}
+
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.h-100 {
+  height: 100%; /* Asegurar que el contenedor padre tenga una altura del 100% */
+}
+.container {
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+h1 {
+  color: #333;
+}
+
+/* Estilos para pantalla de carga */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#loading img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Estilos para el iframe */
+.iframe-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  /* Asegura que el contenedor del iframe esté por encima de otros elementos */
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  position: fixed !important;
+  border: none;
+  /* Elimina el borde del iframe */
+}
+
+/* Estilo para ocultar barras de desplazamiento */
+body.iframe-open {
+  overflow: hidden;
+}
+
+/* Estilos adicionales para el menú de categorías */
+#menu {
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+}
+
+#menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#menu ul li button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#menu ul li button:hover {
+  background-color: #0056b3;
+}
+
+/* Agrega un fondo amarillo cuando el botón está enfocado */
+#menu ul li button:focus {
+  background-color: black;
+  outline: none;
+  /* Evita el contorno predeterminado del botón */
+}

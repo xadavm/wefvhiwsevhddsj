@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="preview"></div>
+
+    <script>
+        function obtenerParametro(nombre) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nombre);
+        }
+
+        function cargarContenido(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    const previewDiv = document.getElementById('preview');
+                    previewDiv.innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el contenido:', error));
+        }
+
+        // Obtener el valor del parámetro 's' de la URL
+        const url = obtenerParametro('s');
+
+        // Si se proporcionó uln valor para el parámetro 's', cargar el contenido de esa URL
+        if (url) {
+            cargarContenido(url);
+        } else {
+            document.getElementById('preview').textContent = 'No se proporcionó ninguna URL para previsualizar.';
+        }
+    </script>
+</body>
+</html>
