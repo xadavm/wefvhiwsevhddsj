@@ -366,6 +366,7 @@
     "kid": "",
     "key": "",
     "embed": "true",
+    "onlypc":"true",
     "urlpc": "https://xadavm.github.io/wefvhiwsevhddsj/c/ca.html"
   
   },
@@ -377,7 +378,7 @@
     "key": "",
     "embed": "true",
     "urlpc": "https://xadavm.github.io/wefvhiwsevhddsj/c/v.html",
-  "url":"https://xadavm.github.io/wefvhiwsevhddsj/c/v.html"
+    "onlypc":"true"
   },
   {
     "name": "Liga Hypermotion",
@@ -443,8 +444,9 @@
     "kid": "",
     "key": "",
     "embed": "true",
-    "urlpc": "https://xadavm.github.io/wefvhiwsevhddsj/c/de.html"
-  
+    "urlpc": "https://xadavm.github.io/wefvhiwsevhddsj/c/de.html",
+    "onlypc":"true"
+
   },
   {
     "name": "EuroSport 2",
