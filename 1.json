@@ -626,9 +626,10 @@
     "categ": "Radio",
       "url": "go:Rud",
       "urlpc": "https://streaming020.gestec-video.com/hls/UDRADIO.m3u8",
-    "iframe":"yes",
-    "embed": "true"
-
+"kid": "",
+"key": "",
+"embed":"true",
+"iframe":"no"
   }
   
 ]
