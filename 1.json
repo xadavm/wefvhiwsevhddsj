@@ -547,5 +547,13 @@
       "urlpc":" /s.html"
 
   
+  },
+  {
+    "name": "Los 40 Urban",
+    "image": "https://i.imgur.com/jTqYNfW.pngg",
+    "categ": "Radio",
+      "url": "go:R40U",
+      "urlpc": "https://22673.live.streamtheworld.com/LOS40_URBANAAC.aac",
+    "iframe":"yes"
   }
 ]
