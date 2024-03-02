@@ -181,6 +181,18 @@
 
   },
   {
+    "name": "DKiss",
+    "image": "https://i.imgur.com/HPLLCZE.png",
+    "categ": "TDT",
+    "kid": "",
+    "key": "",
+    "embed":"true",
+    "url": "go:Ski",
+    "urlpc": "https://spa-ha-p004.cdn.masmediatv.es/SVoriginOperatorEdge2/smil:25_HD.smil/chunklist_b2700000_vo.m3u8",
+    "iframe":"no"
+
+  },
+  {
     "name": "Gol Play",
     "image": "https://i.imgur.com/3pDfFjp.png",
     "categ": "TDT",
