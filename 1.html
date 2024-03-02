@@ -77,16 +77,16 @@
       menu += '</ul>';
       $('#menu').html(menu);
     }
-
+  
     $(document).ready(function () {
       $('#loading').hide();
-
+  
       var lastCategory = localStorage.getItem('lastCategory');
       if (lastCategory) {
         $('.col-md-4').hide();
         $('.col-md-4[data-category="' + lastCategory + '"]').show();
       }
-
+  
       $.getJSON('https://xadavm.github.io/wefvhiwsevhddsj/1.json', function (data) {
         var categories = [];
         data.forEach(function (channel) {
@@ -95,33 +95,36 @@
           }
         });
         generateMenu(categories);
-
+  
         $.each(data, function (key, channel) {
-          var channelItem = `
-          <div class="col-md-4 mb-4 ${key === 0 ? 'first-channel' : ''}" data-category="${channel.categ}">
-              <div class="card" role="button" aria-label="${channel.name}" data-index="${key}" onclick="playVideo(this, '${channel.url}', '${channel.key}', '${channel.kid}', '${channel.embed}', '${channel.urlpc}', '${channel.iframe}')" tabindex="0">
-                  <img src="${channel.image}" class="card-img mt-3" alt="${channel.name}">
-                  <div class="card-body">
-                      <h5 class="card-title text-center">${channel.name}</h5>
-                  </div>
+          // Verificar si el canal solo es para PC y si no es un dispositivo móvil
+          if (channel.onlypc !== "true" || !navigator.userAgent.includes('Mobile')) {
+            var channelItem = `
+              <div class="col-md-4 mb-4 ${key === 0 ? 'first-channel' : ''}" data-category="${channel.categ}">
+                <div class="card" role="button" aria-label="${channel.name}" data-index="${key}" onclick="playVideo(this, '${channel.url}', '${channel.key}', '${channel.kid}', '${channel.embed}', '${channel.urlpc}', '${channel.iframe}')" tabindex="0">
+                    <img src="${channel.image}" class="card-img mt-3" alt="${channel.name}">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">${channel.name}</h5>
+                    </div>
+                </div>
               </div>
-          </div>
-          `;
-          $('#channelList').append(channelItem);
+            `;
+            $('#channelList').append(channelItem);
+          }
         });
-
+  
         var selectedIndex = getSavedSelectedChannelIndex();
         if (selectedIndex !== null) {
           $('#channelList .card').eq(selectedIndex).focus();
         }
       });
     });
-
+  
     var player = null; // Mantener referencia al reproductor
-
+  
     function playVideo(element, url, key, kid, embed, urlpc, iframe, urliframe) {
       var userAgent = navigator.userAgent;
-
+  
       if (embed === 'true') {
         if (!userAgent.includes('Mobile') && (!urlpc || urlpc.trim() === '')) {
           $('#myModal').modal('show');
@@ -135,7 +138,7 @@
           } else {
             if (iframe === "yes") {
               var plugins = [DashShakaPlayback, ClapprPIPPlugin, LevelSelector];
-
+  
               player = new Clappr.Player({
                 source: urlpc,
                 parentId: '#clapprContainer',
@@ -146,7 +149,7 @@
                 fullscreenEnabled: true,
                 hideMediaControl: false,
               });
-
+  
               setTimeout(function () {
                 var container = document.getElementById('clapprContainer');
                 if (container.requestFullscreen) {
@@ -159,7 +162,7 @@
                   container.msRequestFullscreen();
                 }
               }, 500);
-
+  
               document.addEventListener("fullscreenchange", exitHandler);
               document.addEventListener("webkitfullscreenchange", exitHandler);
               document.addEventListener("mozfullscreenchange", exitHandler);
@@ -168,11 +171,11 @@
               var lastModalDate = localStorage.getItem('lastModalDate');
               var oneWeekInMilliseconds = 7 * 24 * 60 * 60 * 1000;
               var currentDate = new Date().getTime();
-
+  
               if (!lastModalDate || (currentDate - lastModalDate > oneWeekInMilliseconds)) {
                 $('#modalextension').modal('show');
                 localStorage.setItem('lastModalDate', currentDate);
-
+  
                 setTimeout(function () {
                   window.location.href = urlpc;
                 }, 3000);
@@ -186,12 +189,12 @@
         var modifiedUrl = 'https://xadavm.github.io/wefvhiwsevhddsj/jw.html?s=' + encodeURI(url) + '&key=' + key + '&kid=' + kid;
         window.location.href = modifiedUrl;
       }
-
+  
       // Guardar el índice del canal seleccionado
       var index = $(element).data('index');
       saveSelectedChannelIndex(index);
     }
-
+  
     function exitHandler() {
       if (!document.fullscreenElement && !document.webkitIsFullScreen && !document.mozFullScreen && !document.msFullscreenElement) {
         if (player) {
@@ -204,29 +207,30 @@
         $('body').removeClass('iframe-open');
       }
     }
-
+  
     $(document).on('click', '.category-btn', function () {
       $('.category-btn').removeClass('active');
       $(this).addClass('active');
-
+  
       var category = $(this).data('category');
-
+  
       localStorage.setItem('lastCategory', category);
-
+  
       $('.col-md-4').hide();
       $('.col-md-4[data-category="' + category + '"]').show();
     });
-
+  
     // Función para guardar y recuperar el índice del canal seleccionado
     function saveSelectedChannelIndex(index) {
       localStorage.setItem('selectedChannelIndex', index);
     }
-
+  
     function getSavedSelectedChannelIndex() {
       return localStorage.getItem('selectedChannelIndex');
     }
-
+  
   </script>
+  
   
 </body>
 
