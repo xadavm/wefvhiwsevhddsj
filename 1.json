@@ -556,6 +556,8 @@
     "categ": "Radio",
       "url": "go:R40U",
       "urlpc": "https://22673.live.streamtheworld.com/LOS40_URBANAAC.aac",
-    "iframe":"yes"
+    "iframe":"yes",
+    "embed": "true"
+
   }
 ]
