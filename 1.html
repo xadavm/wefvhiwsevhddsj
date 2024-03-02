@@ -18,7 +18,7 @@
 
 <body>
   <!-- Agregar formulario de inicio de sesión -->
-  
+
 
   <!-- Mostrar contenido solo si la contraseña es correcta -->
   <div id="menu">
@@ -99,17 +99,20 @@
         $.each(data, function (key, channel) {
           // Verificar si el canal solo es para PC y si no es un dispositivo móvil
           if (channel.onlypc !== "true" || !navigator.userAgent.includes('Mobile')) {
-            var channelItem = `
-              <div class="col-md-4 mb-4 ${key === 0 ? 'first-channel' : ''}" data-category="${channel.categ}">
-                <div class="card" role="button" aria-label="${channel.name}" data-index="${key}" onclick="playVideo(this, '${channel.url}', '${channel.key}', '${channel.kid}', '${channel.embed}', '${channel.urlpc}', '${channel.iframe}')" tabindex="0">
-                    <img src="${channel.image}" class="card-img mt-3" alt="${channel.name}">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">${channel.name}</h5>
-                    </div>
+            // Excluir los canales de la categoría "Radio" en la generación inicial
+            if (channel.categ !== "Radio") {
+              var channelItem = `
+                <div class="col-md-4 mb-4 ${key === 0 ? 'first-channel' : ''}" data-category="${channel.categ}">
+                  <div class="card" role="button" aria-label="${channel.name}" data-index="${key}" onclick="playVideo(this, '${channel.url}', '${channel.key}', '${channel.kid}', '${channel.embed}', '${channel.urlpc}', '${channel.iframe}')" tabindex="0">
+                      <img src="${channel.image}" class="card-img mt-3" alt="${channel.name}">
+                      <div class="card-body">
+                          <h5 class="card-title text-center">${channel.name}</h5>
+                      </div>
+                  </div>
                 </div>
-              </div>
-            `;
-            $('#channelList').append(channelItem);
+              `;
+              $('#channelList').append(channelItem);
+            }
           }
         });
   

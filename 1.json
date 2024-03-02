@@ -595,7 +595,7 @@
     "image": "https://i.imgur.com/KRSkhB0.png",
     "categ": "Radio",
       "url": "go:Rcope2",
-      "urlpc": "https://net2-cope-flucast.flumotion.com/cope/net2.mp3.m3u",
+      "urlpc": "https://net2-cope-rrcast.flumotion.com/cope/net2.mp3",
     "iframe":"yes",
     "embed": "true"
 
