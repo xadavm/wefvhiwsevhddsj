@@ -552,12 +552,83 @@
   },
   {
     "name": "Los 40 Urban",
-    "image": "https://i.imgur.com/jTqYNfW.pngg",
+    "image": "https://i.imgur.com/jTqYNfW.png",
     "categ": "Radio",
       "url": "go:R40U",
       "urlpc": "https://22673.live.streamtheworld.com/LOS40_URBANAAC.aac",
     "iframe":"yes",
     "embed": "true"
 
+  },
+  {
+    "name": "Los 40",
+    "image": "https://i.imgur.com/uZBz7gu.png",
+    "categ": "Radio",
+      "url": "go:R40",
+      "urlpc": "https://28013.live.streamtheworld.com/LOS40AAC.aac",
+    "iframe":"yes",
+    "embed": "true"
+
+  },
+  {
+    "name": "SER",
+    "image": "https://i.imgur.com/GGlxwSv.png",
+    "categ": "Radio",
+      "url": "go:Rser",
+      "urlpc": "https://25603.live.streamtheworld.com/CADENASERAAC.aac",
+    "iframe":"yes",
+    "embed": "true"
+
+  },
+  {
+    "name": "RadioMarca",
+    "image": "https://i.imgur.com/njopuuN.png",
+    "categ": "Radio",
+      "url": "go:Rmarca",
+      "urlpc": "https://27753.live.streamtheworld.com/RADIOMARCA_NACIONALAAC.aac",
+    "iframe":"yes",
+    "embed": "true"
+
+  },
+  {
+    "name": "Cope (2)",
+    "image": "https://i.imgur.com/KRSkhB0.png",
+    "categ": "Radio",
+      "url": "go:Rcope2",
+      "urlpc": "https://net2-cope-flucast.flumotion.com/cope/net2.mp3.m3u",
+    "iframe":"yes",
+    "embed": "true"
+
+  },
+  {
+    "name": "EuropaFM",
+    "image": "https://i.imgur.com/qcRqdYL.png",
+    "categ": "Radio",
+      "url": "go:Reuropa",
+      "urlpc": "https://atres-live.europafm.com/live/europafm/master.m3u8",
+    "iframe":"yes",
+    "embed": "true"
+
+  },
+  {
+    "name": "Cadena Dial",
+    "image": "https://i.imgur.com/GJMjm0s.png",
+    "categ": "Radio",
+      "url": "go:Rcd",
+      "urlpc": "https://22333.live.streamtheworld.com/CADENADIALAAC.aac",
+    "iframe":"yes",
+    "embed": "true"
+
+  },
+  {
+    "name": "UDRadio",
+    "image": "https://i.imgur.com/XYogjTd.png",
+    "categ": "Radio",
+      "url": "go:Rud",
+      "urlpc": "https://cdn318.fractalmedia.es/live317/hls/UDRADIO/master.m3u8",
+    "iframe":"yes",
+    "embed": "true"
+
   }
+  
 ]
