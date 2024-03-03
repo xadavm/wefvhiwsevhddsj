@@ -23,16 +23,6 @@
         width: 100% !important;
         height: 100% !important;
     }
-
-    #loading-message {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 24px;
-        z-index: 9999; /* Asegurar que el mensaje esté encima de todo */
-    }
 </style>
 <script src="jwplayer.js"></script>
 <script src="https://xadavm.github.io/wefvhiwsevhddsj/console-ban.min.js"></script>
@@ -49,15 +39,46 @@
 </script>
 </head>
 <body>
-<div id="loading-message">Cargando...</div> <!-- Agregamos el mensaje de carga aquí -->
+<script type="text/javascript">
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+    var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+let Source = getParameterByName('s');
+let key = getParameterByName('key');
+let keyId = getParameterByName('kid');
+let getLang = getParameterByName('lang');
+if (Source == "#") {alert('Vuelve a la página anterior');}
+</script>
 <div id="player-container">
     <div id="player"></div>
 </div>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    var video = document.getElementById('player');
-    video.addEventListener('play', function () {
-        document.getElementById('loading-message').style.display = 'none';
+// Función para activar el modo de pantalla completa
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+}
+
+// Llamamos a la función toggleFullscreen al hacer clic en el reproductor de video
+document.getElementById("player").addEventListener("click", function() {
+    toggleFullscreen();
+});
+
+// Simulamos la pulsación de la tecla F11 para activar automáticamente el modo de pantalla completa
+window.addEventListener("load", function() {
+    document.body.addEventListener("keydown", function(e) {
+        if (e.key === "F11") {
+            toggleFullscreen();
+        }
     });
 });
 
@@ -88,6 +109,10 @@ data.setup({
     label: "720p", // Establecer la calidad por defecto (por ejemplo, "720")
     defaultQuality: "720" // Establecer la calidad por defecto (por ejemplo, "720")
 });  
+
+data.on("play", function (e) {
+    data.setCurrentAudioTrack(1);
+});
 
 function simulateVolumeUp() {
     var event = new KeyboardEvent('keydown', {
