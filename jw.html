@@ -118,7 +118,10 @@ data.setup({
     label: "720p", // Establecer la calidad por defecto (por ejemplo, "720")
     defaultQuality: "720" // Establecer la calidad por defecto (por ejemplo, "720")
 });  
-
+playerInstance.on("play", function () {
+    console.log("nuevoplay")
+    document.getElementById('loading-message').style.display = 'none';
+});
 data.on("play", function (e) {
     data.setCurrentAudioTrack(1);
     document.getElementById('loading-message').style.display = 'none'; // Oculta el mensaje de carga cuando el video se ha cargado completamente
