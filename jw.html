@@ -125,9 +125,11 @@ data.on("play", function (e) {
 });
 
 data.on("buffer", function() {
-    document.getElementById('loading-message').style.display = 'block'; // Muestra el mensaje de carga cuando se inicia la carga del video
+    console.log("buffer")
 });
-
+data.on("complete", function() {
+    console.log("complete")
+});
 function simulateVolumeUp() {
     var event = new KeyboardEvent('keydown', {
         key: 'ArrowUp'
