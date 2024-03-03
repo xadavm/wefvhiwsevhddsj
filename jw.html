@@ -49,13 +49,21 @@
 </script>
 </head>
 <body>
-<div id="loading-message">asa...</div> <!-- Agregamos el mensaje de carga aquí -->
+<div id="loading-message">Cargando...</div> <!-- Agregamos el mensaje de carga aquí -->
 <div id="player-container">
     <div id="player"></div>
 </div>
 <script>
+document.addEventListener('DOMContentLoaded', function () {
+    var video = document.getElementById('player');
+    video.addEventListener('play', function () {
+        document.getElementById('loading-message').style.display = 'none';
+    });
+});
+
 var data = jwplayer("player");
 
+var idParameter = getParameterByName('id');
 data.setup({
     playlist: [{
         "sources": [{
@@ -80,15 +88,6 @@ data.setup({
     label: "720p", // Establecer la calidad por defecto (por ejemplo, "720")
     defaultQuality: "720" // Establecer la calidad por defecto (por ejemplo, "720")
 });  
-
-data.on('ready', function() {
-    document.getElementById('loading-message').style.display = 'none'; // Oculta el mensaje de carga cuando el reproductor está listo
-});
-
-data.on('error', function() {
-    // Manejar cualquier error de carga del reproductor
-    document.getElementById('loading-message').innerText = 'Error al cargar el reproductor.';
-});
 
 function simulateVolumeUp() {
     var event = new KeyboardEvent('keydown', {
