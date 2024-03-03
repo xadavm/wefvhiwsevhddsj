@@ -23,8 +23,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: white;
-        font-size: 24px;
+        color: red !important;
+        font-size: 44px;
         z-index: 9999; /* Asegurar que el mensaje esté encima de todo */
     }
     #player {
@@ -126,9 +126,11 @@ data.on("play", function (e) {
 });
 
 data.on('buffer', function() {
-    console.log("prueba q llama el evento del buffer");
+    console.log("prueba q llama al buffer");
 });
 data.on('complete', function() {
+    console.log("prueba q llama al complete");
+
     document.getElementById('loading-message').style.display = 'none'; // Oculta el mensaje de carga cuando el video se ha cargado completamente
 });
 function simulateVolumeUp() {
