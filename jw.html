@@ -126,10 +126,11 @@ data.on("play", function (e) {
 });
 
 data.on('buffer', function() {
-    console.log("prueba q llama el evento");
+    console.log("prueba q llama el evento del buffer");
+});
+data.on('complete', function() {
     document.getElementById('loading-message').style.display = 'none'; // Oculta el mensaje de carga cuando el video se ha cargado completamente
 });
-
 function simulateVolumeUp() {
     var event = new KeyboardEvent('keydown', {
         key: 'ArrowUp'
