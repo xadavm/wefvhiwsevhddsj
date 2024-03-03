@@ -23,8 +23,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: red !important;
-        font-size: 44px;
+        color: red;
+        font-size: 34px;
         z-index: 9999; /* Asegurar que el mensaje esté encima de todo */
     }
     #player {
@@ -61,7 +61,7 @@ let getLang = getParameterByName('lang');
 if (Source == "#") {alert('Vuelve a la página anterior');}
 </script>
 <div id="player-container">
-    <div id="loading-message">Prueba<br> </div>
+    <div id="loading-message">Cargando...<br> </div>
     <div id="player"> <!-- Agregamos el mensaje de carga aquí -->
 </div>
 </div>
@@ -120,19 +120,14 @@ data.setup({
 });  
 
 data.on("play", function (e) {
-
     data.setCurrentAudioTrack(1);
-
-});
-
-data.on('buffer', function() {
-    console.log("prueba q llama al buffer");
-});
-data.on('complete', function() {
-    console.log("prueba q llama al complete");
-
     document.getElementById('loading-message').style.display = 'none'; // Oculta el mensaje de carga cuando el video se ha cargado completamente
 });
+
+data.on("buffer", function() {
+    document.getElementById('loading-message').style.display = 'block'; // Muestra el mensaje de carga cuando se inicia la carga del video
+});
+
 function simulateVolumeUp() {
     var event = new KeyboardEvent('keydown', {
         key: 'ArrowUp'
