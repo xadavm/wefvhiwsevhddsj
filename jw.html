@@ -49,39 +49,13 @@
 </script>
 </head>
 <body>
-<div id="loading-message">Cargando...</div> <!-- Agregamos el mensaje de carga aquí -->
+<div id="loading-message">asa...</div> <!-- Agregamos el mensaje de carga aquí -->
 <div id="player-container">
     <div id="player"></div>
 </div>
 <script>
-// Función para activar el modo de pantalla completa
-function toggleFullscreen() {
-    if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
-    } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        }
-    }
-}
-
-// Llamamos a la función toggleFullscreen al hacer clic en el reproductor de video
-document.getElementById("player").addEventListener("click", function() {
-    toggleFullscreen();
-});
-
-// Simulamos la pulsación de la tecla F11 para activar automáticamente el modo de pantalla completa
-window.addEventListener("load", function() {
-    document.body.addEventListener("keydown", function(e) {
-        if (e.key === "F11") {
-            toggleFullscreen();
-        }
-    });
-});
-
 var data = jwplayer("player");
 
-var idParameter = getParameterByName('id');
 data.setup({
     playlist: [{
         "sources": [{
@@ -107,9 +81,13 @@ data.setup({
     defaultQuality: "720" // Establecer la calidad por defecto (por ejemplo, "720")
 });  
 
-data.on("play", function (e) {
-    data.setCurrentAudioTrack(1);
-    document.getElementById('loading-message').style.display = 'none'; // Oculta el mensaje de carga cuando comienza la reproducción
+data.on('ready', function() {
+    document.getElementById('loading-message').style.display = 'none'; // Oculta el mensaje de carga cuando el reproductor está listo
+});
+
+data.on('error', function() {
+    // Manejar cualquier error de carga del reproductor
+    document.getElementById('loading-message').innerText = 'Error al cargar el reproductor.';
 });
 
 function simulateVolumeUp() {
