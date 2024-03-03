@@ -35,7 +35,6 @@
     }
 </style>
 <script src="jwplayer.js"></script>
-<script src="https://xadavm.github.io/wefvhiwsevhddsj/console-ban.min.js"></script>
 <script> 
   // default options
   ConsoleBan.init();
@@ -49,7 +48,7 @@
 </script>
 </head>
 <body>
-<div id="loading-message">Cargando...</div> <!-- Agregamos el mensaje de carga aquí -->
+<div id="loading-message">Cargandaita...</div> <!-- Agregamos el mensaje de carga aquí -->
 <div id="player-container">
     <div id="player"></div>
 </div>
@@ -107,13 +106,13 @@ data.setup({
     defaultQuality: "720" // Establecer la calidad por defecto (por ejemplo, "720")
 });  
 
-data.on('setupError', function() {
-    // Ocultar el mensaje de carga cuando el reproductor haya terminado de configurarse
-    document.getElementById('loading-message').style.display = 'none';
-});
-
 data.on("play", function (e) {
     data.setCurrentAudioTrack(1);
+});
+
+data.on('ready', function() {
+    // Ocultar el mensaje de carga cuando el reproductor esté listo
+    document.getElementById('loading-message').style.display = 'none';
 });
 
 function simulateVolumeUp() {
