@@ -9,6 +9,17 @@
   <link href="https://xadavm.github.io/wefvhiwsevhddsj/css.css" rel="stylesheet">
   <script src="https://xadavm.github.io/wefvhiwsevhddsj/jquery-3.6.0.min.js"></script>
   <script src="https://xadavm.github.io/wefvhiwsevhddsj/bootstrap.min.js"></script>
+  <script src="https://xadavm.github.io/wefvhiwsevhddsj/claprrr.js"></script>
+  <script src="https://xadavm.github.io/wefvhiwsevhddsj/mux.min.js"></script>
+  <script src='https://xadavm.github.io/wefvhiwsevhddsj/level-selector.min.js'></script>
+  <script src='https://xadavm.github.io/wefvhiwsevhddsj/clappr-chromecast-plugin.min.js'></script>
+  <script src='https://xadavm.github.io/wefvhiwsevhddsj/clappr-pip.min.js'></script>
+  <script src='https://xadavm.github.io/wefvhiwsevhddsj/clappr-playback-rate-plugin.min.js'></script>
+  <script src="https://xadavm.github.io/wefvhiwsevhddsj/shaka-player.compiled.min.js"></script>
+  <script src="https://xadavm.github.io/wefvhiwsevhddsj/dash-shaka-playback.external.min.js"></script>
+  <script src="https://xadavm.github.io/wefvhiwsevhddsj/cdnbye-shaka@latest"></script>
+  <script src="https://xadavm.github.io/wefvhiwsevhddsj/jquery.min.js"></script>
+  <script src="https://xadavm.github.io/wefvhiwsevhddsj/console-ban.min.js"></script>
   <script src="https://xadavm.github.io/wefvhiwsevhddsj/clappr.min.js"></script>
   <script src="https://xadavm.github.io/wefvhiwsevhddsj/dash-shaka-playback.js"></script>
   <script type="text/javascript" src="https://xadavm.github.io/wefvhiwsevhddsj/clappr-pip-plugin.js"></script>
@@ -85,6 +96,8 @@
   
       $.getJSON('https://xadavm.github.io/wefvhiwsevhddsj/1.json', function (data) {
         $.each(data, function (key, channel) {
+          if (channel.onlypc !== "true" || !navigator.userAgent.includes('Mobile')) {
+
           if (!categoryToShow || channel.categ === categoryToShow) {
             var channelItem = `
               <div class="col-md-4 mb-4 ${key === 0 ? 'first-channel' : ''}" data-category="${channel.categ}">
@@ -97,7 +110,7 @@
               </div>
             `;
             $('#channelList').append(channelItem);
-          }
+          } }
         });
       });
     }
@@ -119,7 +132,7 @@
             }
           } else {
             if (iframe === "yes") {
-              var plugins = [DashShakaPlayback, ClapprPIPPlugin, LevelSelector];
+              var plugins = [DashShakaPlayback, ClapprPIPPlugin, LevelSelector,ClapprPip.PipButton, ClapprPip.PipPlugin];
   
               player = new Clappr.Player({
                 source: urlpc,
