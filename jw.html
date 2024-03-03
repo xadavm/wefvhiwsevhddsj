@@ -33,7 +33,6 @@
     }
 </style>
 <script src="jwplayer.js"></script>
-<script src="https://xadavm.github.io/wefvhiwsevhddsj/console-ban.min.js"></script>
 <script> 
   // default options
   ConsoleBan.init();
@@ -62,7 +61,7 @@ let getLang = getParameterByName('lang');
 if (Source == "#") {alert('Vuelve a la página anterior');}
 </script>
 <div id="player-container">
-    <div id="loading-message">b...</div>
+    <div id="loading-message">Cargando<br> <img src="https://i.imgur.com/93JcriM.gif" /></div>
     <div id="player"> <!-- Agregamos el mensaje de carga aquí -->
 </div>
 </div>
@@ -125,6 +124,17 @@ data.on("play", function (e) {
 
     data.setCurrentAudioTrack(1);
 
+});
+data.on('bufferChange', function(event) {
+    // Aquí puedes agregar código para manejar la carga del buffer
+    console.log('Cargando buffer...');
+    console.log('Porcentaje de buffer:', event.bufferPercent);
+    console.log('Duración del video:', event.duration);
+    console.log('Posición actual:', event.position);
+});
+data.on('buffer', function() {
+    // Aquí puedes agregar código para manejar la carga del buffer
+    console.log('Cargando buffer...');
 });
 
 function simulateVolumeUp() {
