@@ -18,12 +18,6 @@
         height: 100%;
         background-color: black; /* Fondo negro para el reproductor */
     }
-
-    #player {
-        width: 100% !important;
-        height: 100% !important;
-    }
-
     #loading-message {
         position: fixed;
         top: 50%;
@@ -31,10 +25,14 @@
         transform: translate(-50%, -50%);
         color: white;
         font-size: 24px;
-        z-index: 9999; /* Asegurar que el mensaje esté encima de todo */
+    }
+    #player {
+        width: 100% !important;
+        height: 100% !important;
     }
 </style>
 <script src="jwplayer.js"></script>
+<script src="https://xadavm.github.io/wefvhiwsevhddsj/console-ban.min.js"></script>
 <script> 
   // default options
   ConsoleBan.init();
@@ -48,11 +46,24 @@
 </script>
 </head>
 <body>
+<script type="text/javascript">
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+    var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+    results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+let Source = getParameterByName('s');
+let key = getParameterByName('key');
+let keyId = getParameterByName('kid');
+let getLang = getParameterByName('lang');
+if (Source == "#") {alert('Vuelve a la página anterior');}
+</script>
 <div id="player-container">
-
-    <div id="player"></div>
-        <div id="loading-message">asa...</div> <!-- Agregamos el mensaje de carga aquí -->
-
+    <div id="loading-message">b...</div>
+    <div id="player"> <!-- Agregamos el mensaje de carga aquí -->
+</div>
 </div>
 <script>
 // Función para activar el modo de pantalla completa
@@ -109,8 +120,10 @@ data.setup({
 });  
 
 data.on("play", function (e) {
-    data.setCurrentAudioTrack(1);
     document.getElementById('loading-message').style.display = 'none'; // Oculta el mensaje de carga cuando comienza la reproducción
+
+    data.setCurrentAudioTrack(1);
+
 });
 
 function simulateVolumeUp() {
