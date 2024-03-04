@@ -61,13 +61,10 @@ let getLang = getParameterByName('lang');
 if (Source == "#") {alert('Vuelve a la página anterior');}
 </script>
 <div id="player-container">
+    <div id="loading-message">uwu<br> </div>
     <div id="player"> <!-- Agregamos el mensaje de carga aquí -->
 </div>
-
 </div>
-
-<div id="loading-message">wwwwww<br> </div>
-
 <script>
 // Función para activar el modo de pantalla completa
 function toggleFullscreen() {
@@ -120,63 +117,17 @@ playerInstance.setup({
     label: "720p",
     defaultQuality: "720"
 }); 
-playerInstance.on("play", function () {
-    console.log("nuevoplay");
-    document.getElementById('loading-message').style.display = 'none';
-});
 
-
-
-
-playerInstance.on("play", function (e) {
-    playerInstance.setCurrentAudioTrack(1);
-    
-});
-
-playerInstance.on("buffer", function() {
-    document.getElementById('loading-message').style.display = 'none';
-
-    console.log("buffer");
-});
-playerInstance.on("complete", function() {
-    document.getElementById('loading-message').style.display = 'none';
-
-    console.log("complete");
-});
-
-
-
-jwplayer().on('bufferChange', function(event) {
-    if (event.buffer === false) {
+// Verificar el estado del video a intervalos regulares
+var checkVideoStatusInterval = setInterval(function() {
+    // Verificar si el video se ha cargado completamente y ha finalizado su reproducción
+    if (playerInstance.getState() === "complete" && playerInstance.getBuffer() === 100) {
+        // Ocultar el mensaje de carga
         document.getElementById('loading-message').style.display = 'none';
+        // Detener la verificación periódica
+        clearInterval(checkVideoStatusInterval);
     }
-});
-
-function simulateVolumeUp() {
-    var event = new KeyboardEvent('keydown', {
-        key: 'ArrowUp'
-    });
-    document.dispatchEvent(event);
-    setTimeout(function() {
-        document.dispatchEvent(event);
-    }, 900); // Esperamos 500 milisegundos antes de disparar el evento por segunda vez
-}
-
-// Simular el evento de teclado de volumen hacia arriba después de un breve retraso
-setTimeout(simulateVolumeUp, 1200);
-
-
-
-function hideLoadingMessageIfBufferedEnough() {
-    var bufferPercentage = jwplayer().getBuffer();
-    if (bufferPercentage >= 95) { // Por ejemplo, ocultar el mensaje de carga cuando el búfer sea del 95% o más
-        document.getElementById('loading-message').style.display = 'none';
-    }
-}
-
-// Llama a la función para verificar el estado del búfer cada cierto intervalo de tiempo
-setInterval(hideLoadingMessageIfBufferedEnough, 1000); // Verifica cada segundo (1000 milisegundos)
-
+}, 1000); // Verificar cada segundo (1000 milisegundos)
 </script>
 </body>
 </html>
