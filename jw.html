@@ -61,7 +61,7 @@ let getLang = getParameterByName('lang');
 if (Source == "#") {alert('Vuelve a la página anterior');}
 </script>
 <div id="player-container">
-    <div id="loading-message"><br> </div>
+    <div id="loading-message">Prueba<br> </div>
     <div id="player"> <!-- Agregamos el mensaje de carga aquí -->
 </div>
 </div>
@@ -131,13 +131,17 @@ playerInstance.setCurrentAudioTrack(1);
     
 });
 
-playerInstance.on("buffer", function() {
+var bufferComplete = false;
 
-document.getElementById('loading-message').style.display = 'none';
-    console.log("buffer");
+playerInstance.on("buffer", function () {
+    bufferComplete = true;
 });
-playerInstance.on("complete", function() {
-    console.log("complete");
+
+playerInstance.on("complete", function () {
+    if (bufferComplete) {
+        console.log("reproducción completa");
+        document.getElementById('loading-message').style.display = 'none'; // Oculta el mensaje de carga cuando la reproducción ha finalizado y el buffer está completo
+    }
 });
 
 
