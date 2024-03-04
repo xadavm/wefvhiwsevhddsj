@@ -91,10 +91,9 @@ window.addEventListener("load", function() {
     });
 });
 
-var data = jwplayer("player");
+var playerInstance = jwplayer("player");
 
-var idParameter = getParameterByName('id');
-data.setup({
+playerInstance.setup({
     playlist: [{
         "sources": [{
             "default": false,
@@ -113,27 +112,31 @@ data.setup({
     autostart: true,
     cast: {},
     sharing: {},
-    controls: true, // Mostrar controles de reproducción
-    displaytitle: true, // Mostrar título del video
-    label: "720p", // Establecer la calidad por defecto (por ejemplo, "720")
-    defaultQuality: "720" // Establecer la calidad por defecto (por ejemplo, "720")
-});  
+    controls: true,
+    displaytitle: true,
+    label: "720p",
+    defaultQuality: "720"
+}); 
 playerInstance.on("play", function () {
     console.log("nuevoplay");
     document.getElementById('loading-message').style.display = 'none';
 });
-data.on("play", function (e) {
+
+
+
+
+playerInstance.on("play", function (e) {
 document.getElementById('loading-message').style.display = 'none';
     data.setCurrentAudioTrack(1);
     
 });
 
-data.on("buffer", function() {
+playerInstance.on("buffer", function() {
 
 document.getElementById('loading-message').style.display = 'none';
     console.log("buffer");
 });
-data.on("complete", function() {
+playerInstance.on("complete", function() {
     console.log("complete");
 });
 
