@@ -158,6 +158,18 @@ function simulateVolumeUp() {
 // Simular el evento de teclado de volumen hacia arriba después de un breve retraso
 setTimeout(simulateVolumeUp, 1200);
 
+
+
+function hideLoadingMessageIfBufferedEnough() {
+    var bufferPercentage = jwplayer().getBuffer();
+    if (bufferPercentage >= 95) { // Por ejemplo, ocultar el mensaje de carga cuando el búfer sea del 95% o más
+        document.getElementById('loading-message').style.display = 'none';
+    }
+}
+
+// Llama a la función para verificar el estado del búfer cada cierto intervalo de tiempo
+setInterval(hideLoadingMessageIfBufferedEnough, 1000); // Verifica cada segundo (1000 milisegundos)
+
 </script>
 </body>
 </html>
