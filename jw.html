@@ -136,6 +136,14 @@ document.getElementById('loading-message').style.display = 'none';
 data.on("complete", function() {
     console.log("complete")
 });
+
+
+data.on("loadedmetadata", function() {
+   console.log("data cargada")
+}); document.getElementById('loading-message').style.display = 'none'; 
+});
+
+
 function simulateVolumeUp() {
     var event = new KeyboardEvent('keydown', {
         key: 'ArrowUp'
