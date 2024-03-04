@@ -138,10 +138,12 @@ data.on("complete", function() {
 });
 
 
-data.on("loadedmetadata", function() {
-   
-});
 
+jwplayer().on('bufferChange', function(event) {
+    if (event.buffer === false) {
+        document.getElementById('loading-message').style.display = 'none';
+    }
+});
 
 function simulateVolumeUp() {
     var event = new KeyboardEvent('keydown', {
