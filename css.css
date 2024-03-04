@@ -11,8 +11,7 @@ body {
   transition: transform 0.3s ease;
   cursor: pointer;
   height: 100%;
-  width: 90%;
-  min-height: 100px; /* Establecer una altura mínima para las cartas */
+  min-height: 156px; /* Establecer una altura mínima para las cartas */
 }
 
 
