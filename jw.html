@@ -61,7 +61,7 @@ let getLang = getParameterByName('lang');
 if (Source == "#") {alert('Vuelve a la página anterior');}
 </script>
 <div id="player-container">
-    <div id="loading-message">Prueba<br> </div>
+    <div id="loading-message">asa<br> </div>
     <div id="player"> <!-- Agregamos el mensaje de carga aquí -->
 </div>
 </div>
@@ -119,14 +119,12 @@ playerInstance.setup({
 }); 
 playerInstance.on("play", function () {
     console.log("nuevoplay");
-    document.getElementById('loading-message').style.display = 'none';
 });
 
 
 
 
 playerInstance.on("play", function (e) {
-document.getElementById('loading-message').style.display = 'none';
 playerInstance.setCurrentAudioTrack(1);
     
 });
@@ -146,11 +144,7 @@ playerInstance.on("complete", function () {
 
 
 
-jwplayer().on('bufferChange', function(event) {
-    if (event.buffer === false) {
-        document.getElementById('loading-message').style.display = 'none';
-    }
-});
+
 
 function simulateVolumeUp() {
     var event = new KeyboardEvent('keydown', {
