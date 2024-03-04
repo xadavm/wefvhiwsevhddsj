@@ -61,11 +61,36 @@ let getLang = getParameterByName('lang');
 if (Source == "#") {alert('Vuelve a la página anterior');}
 </script>
 <div id="player-container">
-    <div id="player">    <div id="loading-message">uwu<br> </div>
-    <!-- Agregamos el mensaje de carga aquí -->
-    </div>
+    <div id="loading-message">uwu<br> </div>
+    <div id="player"> <!-- Agregamos el mensaje de carga aquí -->
+</div>
 </div>
 <script>
+// Función para activar el modo de pantalla completa
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+}
+
+// Llamamos a la función toggleFullscreen al hacer clic en el reproductor de video
+document.getElementById("player").addEventListener("click", function() {
+    toggleFullscreen();
+});
+
+// Simulamos la pulsación de la tecla F11 para activar automáticamente el modo de pantalla completa
+window.addEventListener("load", function() {
+    document.body.addEventListener("keydown", function(e) {
+        if (e.key === "F11") {
+            toggleFullscreen();
+        }
+    });
+});
+
 var playerInstance = jwplayer("player");
 
 playerInstance.setup({
@@ -98,34 +123,19 @@ playerInstance.on("play", function () {
 });
 
 playerInstance.on("play", function (e) {
-    playerInstance.setCurrentAudioTrack(1);    
+    playerInstance.setCurrentAudioTrack(1);
 });
 
-var bufferComplete = false;
-
-playerInstance.on("buffer", function () {
-    bufferComplete = true;
-});
-
-playerInstance.on("complete", function () {
-    if (bufferComplete) {
-        console.log("reproducción completa");
-        document.getElementById('loading-message').style.display = 'none'; // Oculta el mensaje de carga cuando la reproducción ha finalizado y el buffer está completo
+// Verifica periódicamente si el buffer está suficientemente cargado para ocultar el mensaje de carga
+function hideLoadingMessageIfBufferedEnough() {
+    var bufferPercentage = playerInstance.getBuffer();
+    if (bufferPercentage >= 95) { // Por ejemplo, ocultar el mensaje de carga cuando el búfer sea del 95% o más
+        document.getElementById('loading-message').style.display = 'none';
     }
-});
-
-function simulateVolumeUp() {
-    var event = new KeyboardEvent('keydown', {
-        key: 'ArrowUp'
-    });
-    document.dispatchEvent(event);
-    setTimeout(function() {
-        document.dispatchEvent(event);
-    }, 900); // Esperamos 500 milisegundos antes de disparar el evento por segunda vez
 }
 
-// Simular el evento de teclado de volumen hacia arriba después de un breve retraso
-setTimeout(simulateVolumeUp, 1200);
+// Llama a la función para verificar el estado del búfer cada cierto intervalo de tiempo
+setInterval(hideLoadingMessageIfBufferedEnough, 1000); // Verifica cada segundo (1000 milisegundos)
 
 </script>
 </body>
