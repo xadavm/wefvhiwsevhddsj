@@ -123,11 +123,14 @@ playerInstance.on("play", function () {
     document.getElementById('loading-message').style.display = 'none';
 });
 data.on("play", function (e) {
+document.getElementById('loading-message').style.display = 'none';
     data.setCurrentAudioTrack(1);
-    document.getElementById('loading-message').style.display = 'none'; // Oculta el mensaje de carga cuando el video se ha cargado completamente
+    
 });
 
 data.on("buffer", function() {
+
+document.getElementById('loading-message').style.display = 'none';
     console.log("buffer")
 });
 data.on("complete", function() {
