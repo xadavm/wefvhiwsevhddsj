@@ -61,7 +61,7 @@ let getLang = getParameterByName('lang');
 if (Source == "#") {alert('Vuelve a la página anterior');}
 </script>
 <div id="player-container">
-    <div id="loading-message">uwu<br> </div>
+    <div id="loading-message">xxxxx<br> </div>
     <div id="player"> <!-- Agregamos el mensaje de carga aquí -->
 </div>
 </div>
@@ -118,16 +118,24 @@ playerInstance.setup({
     defaultQuality: "720"
 }); 
 
-// Verificar el estado del video a intervalos regulares
-var checkVideoStatusInterval = setInterval(function() {
-    // Verificar si el video se ha cargado completamente y ha finalizado su reproducción
-    if (playerInstance.getState() === "complete" && playerInstance.getBuffer() === 100) {
-        // Ocultar el mensaje de carga
+var bufferComplete = false;
+var videoComplete = false;
+
+playerInstance.on("buffer", function () {
+    bufferComplete = true;
+    checkLoadingState();
+});
+
+playerInstance.on("complete", function () {
+    videoComplete = true;
+    checkLoadingState();
+});
+
+function checkLoadingState() {
+    if (bufferComplete && videoComplete) {
         document.getElementById('loading-message').style.display = 'none';
-        // Detener la verificación periódica
-        clearInterval(checkVideoStatusInterval);
     }
-}, 1000); // Verificar cada segundo (1000 milisegundos)
+}
 </script>
 </body>
 </html>
