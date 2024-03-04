@@ -136,6 +136,26 @@ function checkLoadingState() {
         document.getElementById('loading-message').style.display = 'none';
     }
 }
+
+// Verificar el estado del búfer periódicamente
+var bufferCheckInterval = setInterval(function() {
+    var bufferPercentage = playerInstance.getBuffer();
+    if (bufferPercentage >= 95) { // Por ejemplo, ocultar el mensaje de carga cuando el búfer sea del 95% o más
+        clearInterval(bufferCheckInterval); // Detener la verificación del búfer
+        document.getElementById('loading-message').style.display = 'none';
+    }
+}, 1000); // Verificar cada segundo (1000 milisegundos)
+</script>
+
+<script>
+    // Verificar el estado del búfer periódicamente
+var bufferCheckInterval = setInterval(function() {
+    var bufferPercentage = playerInstance.getBuffer();
+    if (bufferPercentage >= 95) { // Por ejemplo, ocultar el mensaje de carga cuando el búfer sea del 95% o más
+        clearInterval(bufferCheckInterval); // Detener la verificación del búfer
+        document.getElementById('loading-message').style.display = 'none';
+    }
+}, 1000); // Verificar cada segundo (1000 milisegundos)
 </script>
 </body>
 </html>
