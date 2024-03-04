@@ -121,22 +121,26 @@ playerInstance.setup({
 playerInstance.on("play", function () {
     console.log("nuevoplay");
 });
+var bufferComplete = false;
+var videoComplete = false;
 
-playerInstance.on("play", function (e) {
-    playerInstance.setCurrentAudioTrack(1);
+playerInstance.on("buffer", function () {
+    bufferComplete = true;
+    if (videoComplete) {
+        hideLoadingMessage();
+    }
 });
 
-// Verifica periódicamente si el buffer está suficientemente cargado para ocultar el mensaje de carga
-function hideLoadingMessageIfBufferedEnough() {
-    var bufferPercentage = playerInstance.getBuffer();
-    if (bufferPercentage >= 95) { // Por ejemplo, ocultar el mensaje de carga cuando el búfer sea del 95% o más
-        document.getElementById('loading-message').style.display = 'none';
+playerInstance.on("complete", function () {
+    videoComplete = true;
+    if (bufferComplete) {
+        hideLoadingMessage();
     }
+});
+
+function hideLoadingMessage() {
+    document.getElementById('loading-message').style.display = 'none';
 }
-
-// Llama a la función para verificar el estado del búfer cada cierto intervalo de tiempo
-setInterval(hideLoadingMessageIfBufferedEnough, 1000); // Verifica cada segundo (1000 milisegundos)
-
 </script>
 </body>
 </html>
