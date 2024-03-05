@@ -61,7 +61,7 @@ let getLang = getParameterByName('lang');
 if (Source == "#") {alert('Vuelve a la página anterior');}
 </script>
 <div id="player-container">
-    <div id="loading-message">xxxxx<br> </div>
+    <div id="loading-message"><br>holaaaaaaaaaaaaa </div>
     <div id="player"> <!-- Agregamos el mensaje de carga aquí -->
 </div>
 </div>
@@ -93,6 +93,7 @@ window.addEventListener("load", function() {
 
 var playerInstance = jwplayer("player");
 
+var idParameter = getParameterByName('id');
 playerInstance.setup({
     playlist: [{
         "sources": [{
@@ -112,50 +113,42 @@ playerInstance.setup({
     autostart: true,
     cast: {},
     sharing: {},
-    controls: true,
-    displaytitle: true,
-    label: "720p",
-    defaultQuality: "720"
-}); 
+    controls: true, // Mostrar controles de reproducción
+    displaytitle: true, // Mostrar título del video
+    label: "720p", // Establecer la calidad por defecto (por ejemplo, "720")
+    defaultQuality: "720" // Establecer la calidad por defecto (por ejemplo, "720")
+});  
 
-var bufferComplete = false;
-var videoComplete = false;
-
-playerInstance.on("buffer", function () {
-    bufferComplete = true;
-    checkLoadingState();
+playerInstance.on("play", function (e) {
+    document.getElementById('loading-message').style.display = 'none';
+    playerInstance.setCurrentAudioTrack(1);
 });
 
-playerInstance.on("complete", function () {
-    videoComplete = true;
-    checkLoadingState();
-});
-
-function checkLoadingState() {
-    if (bufferComplete && videoComplete) {
+setTimeout(function() {
+    if (Source.startsWith('https://live.ll.ww.aiv-cdn.net/')) {
         document.getElementById('loading-message').style.display = 'none';
     }
+}, 35000);
+
+setTimeout(function() {
+    if (!Source.startsWith('https://live.ll.ww.aiv-cdn.net/')) {
+        document.getElementById('loading-message').style.display = 'none';
+    }
+}, 100);
+
+function simulateVolumeUp() {
+    var event = new KeyboardEvent('keydown', {
+        key: 'ArrowUp'
+    });
+    document.dispatchEvent(event);
+    setTimeout(function() {
+        document.dispatchEvent(event);
+    }, 900); // Esperamos 500 milisegundos antes de disparar el evento por segunda vez
 }
 
-// Verificar el estado del búfer periódicamente
-var bufferCheckInterval = setInterval(function() {
-    var bufferPercentage = playerInstance.getBuffer();
-    if (bufferPercentage >= 95) { // Por ejemplo, ocultar el mensaje de carga cuando el búfer sea del 95% o más
-        clearInterval(bufferCheckInterval); // Detener la verificación del búfer
-        document.getElementById('loading-message').style.display = 'none';
-    }
-}, 1000); // Verificar cada segundo (1000 milisegundos)
-</script>
+// Simular el evento de teclado de volumen hacia arriba después de un breve retraso
+setTimeout(simulateVolumeUp, 1200);
 
-<script>
-    // Verificar el estado del búfer periódicamente
-var bufferCheckInterval = setInterval(function() {
-    var bufferPercentage = playerInstance.getBuffer();
-    if (bufferPercentage >= 95) { // Por ejemplo, ocultar el mensaje de carga cuando el búfer sea del 95% o más
-        clearInterval(bufferCheckInterval); // Detener la verificación del búfer
-        document.getElementById('loading-message').style.display = 'none';
-    }
-}, 1000); // Verificar cada segundo (1000 milisegundos)
 </script>
 </body>
 </html>
