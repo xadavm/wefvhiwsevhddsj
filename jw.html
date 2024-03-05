@@ -126,17 +126,16 @@ playerInstance.on("play", function (e) {
 });
 
 window.addEventListener('DOMContentLoaded', function() {
-    if (Source.startsWith('https://live.ll.ww.aiv-cdn.net/')) {
-        // Ocultar el mensaje después de 35 segundos
-        setTimeout(function() {
-            document.getElementById('loading-message').style.display = 'none';
-        }, 35000); // 35 segundos en milisegundos
-    } else {
-        // Ocultar el mensaje después de 1 segundo para cualquier otra URL
-        setTimeout(function() {
-            document.getElementById('loading-message').style.display = 'none';
-        }, 6000);
-    }
+ // Verificar si la URL comienza con la cadena especificada
+if (Source.indexOf('https://live.ll.ww.aiv-cdn.net/') === 0) {
+    setTimeout(function() {
+        document.getElementById('loading-message').style.display = 'none';
+    }, 35000); // 35 segundos en milisegundos
+} else {
+    setTimeout(function() {
+        document.getElementById('loading-message').style.display = 'none';
+    }, 5500); // 5.5 segundos en milisegundos
+}
 });
 
 function simulateVolumeUp() {
