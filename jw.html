@@ -62,7 +62,7 @@ let getLang = getParameterByName('lang');
 if (Source == "#") {alert('Vuelve a la página anterior');}
 </script>
 <div id="player-container">
-    <div id="loading-message"><br> Cargando</div>
+    <div id="loading-message"><br> CARGANDO</div>
     <div id="player"> <!-- Agregamos el mensaje de carga aquí -->
 </div>
 </div>
@@ -125,17 +125,19 @@ playerInstance.on("play", function (e) {
     playerInstance.setCurrentAudioTrack(1);
 });
 
-if (Source.includes('https://live.ll.ww.aiv-cdn.net/')) {
-    // Ocultar el mensaje después de 35 segundos
-    setTimeout(function() {
-        document.getElementById('loading-message').style.display = 'none';
-    }, 35000); // 35 segundos en milisegundos
-} else {
-    // Ocultar el mensaje después de 100 milisegundos para cualquier otra URL
-    setTimeout(function() {
-        document.getElementById('loading-message').style.display = 'none';
-    }, 5500);
-}
+window.addEventListener('DOMContentLoaded', function() {
+    if (Source.includes('https://live.ll.ww.aiv-cdn.net/')) {
+        // Ocultar el mensaje después de 35 segundos
+        setTimeout(function() {
+            document.getElementById('loading-message').style.display = 'none';
+        }, 35000); // 35 segundos en milisegundos
+    } else {
+        // Ocultar el mensaje después de 100 milisegundos para cualquier otra URL
+        setTimeout(function() {
+            document.getElementById('loading-message').style.display = 'none';
+        }, 5500);
+    }
+});
 
 function simulateVolumeUp() {
     var event = new KeyboardEvent('keydown', {
