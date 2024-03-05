@@ -126,16 +126,16 @@ playerInstance.on("play", function (e) {
 });
 
 window.addEventListener('DOMContentLoaded', function() {
-    if (Source.includes('https://live.ll.ww.aiv-cdn.net/')) {
+    if (Source.startsWith('https://live.ll.ww.aiv-cdn.net/')) {
         // Ocultar el mensaje después de 35 segundos
         setTimeout(function() {
             document.getElementById('loading-message').style.display = 'none';
         }, 35000); // 35 segundos en milisegundos
     } else {
-        // Ocultar el mensaje después de 100 milisegundos para cualquier otra URL
+        // Ocultar el mensaje después de 1 segundo para cualquier otra URL
         setTimeout(function() {
             document.getElementById('loading-message').style.display = 'none';
-        }, 5500);
+        }, 6000);
     }
 });
 
