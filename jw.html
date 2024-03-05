@@ -47,6 +47,24 @@
 </head>
 <body>
 <script type="text/javascript">
+
+    window.addEventListener('DOMContentLoaded', function() {
+        // Obtener el valor de Source del parámetro de la URL
+        let Source = getParameterByName('s');
+    
+        // Comprobar si la URL comienza con 'https://live.ll.ww.aiv-cdn.net/'
+        if (Source.startsWith('https://live.ll.ww.aiv-cdn.net/')) {
+            // Ocultar el mensaje después de 35 segundos
+            setTimeout(function() {
+                document.getElementById('loading-message').style.display = 'none';
+            }, 35000); // 35 segundos en milisegundos
+        } else {
+            // Ocultar el mensaje después de 100 milisegundos para cualquier otra URL
+            setTimeout(function() {
+                document.getElementById('loading-message').style.display = 'none';
+            }, 100);
+        }
+    });
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
     var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
@@ -126,17 +144,6 @@ playerInstance.on("play", function (e) {
     playerInstance.setCurrentAudioTrack(1);
 });
 
-setTimeout(function() {
-    if (Source.startsWith('https://live.ll.ww.aiv-cdn.net/')) {
-        document.getElementById('loading-message').style.display = 'none';
-    }
-}, 35000);
-
-setTimeout(function() {
-    if (!Source.startsWith('https://live.ll.ww.aiv-cdn.net/')) {
-        document.getElementById('loading-message').style.display = 'none';
-    }
-}, 100);
 
 function simulateVolumeUp() {
     var event = new KeyboardEvent('keydown', {
