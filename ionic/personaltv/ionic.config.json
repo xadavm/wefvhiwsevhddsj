@@ -1,7 +1,0 @@
-{
-  "name": "personaltv",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react-vite"
-}
