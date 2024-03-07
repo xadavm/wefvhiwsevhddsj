@@ -18,21 +18,14 @@
         height: 100%;
         background-color: black; /* Fondo negro para el reproductor */
     }
-    #loading-message {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: red;
-        font-size: 34px;
-        z-index: 9999; /* Asegurar que el mensaje esté encima de todo */
-    }
+
     #player {
         width: 100% !important;
         height: 100% !important;
     }
 </style>
 <script src="jwplayer.js"></script>
+<script src="https://xadavm.github.io/xx/console-ban.min.js"></script>
 <script> 
   // default options
   ConsoleBan.init();
@@ -55,17 +48,13 @@ function getParameterByName(name) {
 }
 
 let Source = getParameterByName('s');
-console.log("URL Source:", Source); // Agregar console.log para imprimir la URL Source
 let key = getParameterByName('key');
 let keyId = getParameterByName('kid');
 let getLang = getParameterByName('lang');
 if (Source == "#") {alert('Vuelve a la página anterior');}
 </script>
 <div id="player-container">
-    <div id="player"> 
-        <div id="loading-message"><br> CARGANDO</div>
-
-</div>
+    <div id="player"></div>
 </div>
 <script>
 // Función para activar el modo de pantalla completa
@@ -93,10 +82,10 @@ window.addEventListener("load", function() {
     });
 });
 
-var playerInstance = jwplayer("player");
+var data = jwplayer("player");
 
 var idParameter = getParameterByName('id');
-playerInstance.setup({
+data.setup({
     playlist: [{
         "sources": [{
             "default": false,
@@ -119,22 +108,8 @@ playerInstance.setup({
     displaytitle: true // Mostrar título del video
 });  
 
-playerInstance.on("play", function (e) {
-    document.getElementById('loading-message').style.display = 'none';
-    playerInstance.setCurrentAudioTrack(1);
-});
-
-window.addEventListener('DOMContentLoaded', function() {
- // Verificar si la URL comienza con la cadena especificada
-if (Source.indexOf('https://live.ll.ww.aiv-cdn.net/') === 0) {
-    setTimeout(function() {
-        document.getElementById('loading-message').style.display = 'none';
-    }, 35000); // 35 segundos en milisegundos
-} else {
-    setTimeout(function() {
-        document.getElementById('loading-message').style.display = 'none';
-    }, 5500); // 5.5 segundos en milisegundos
-}
+data.on("play", function (e) {
+    data.setCurrentAudioTrack(1);
 });
 
 function simulateVolumeUp() {
