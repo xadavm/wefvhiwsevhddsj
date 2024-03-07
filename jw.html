@@ -116,9 +116,7 @@ playerInstance.setup({
     cast: {},
     sharing: {},
     controls: true, // Mostrar controles de reproducción
-    displaytitle: true, // Mostrar título del video
-    label: "720p", // Establecer la calidad por defecto (por ejemplo, "720")
-    defaultQuality: "720" // Establecer la calidad por defecto (por ejemplo, "720")
+    displaytitle: true // Mostrar título del video
 });  
 
 playerInstance.on("play", function (e) {
@@ -151,7 +149,6 @@ function simulateVolumeUp() {
 
 // Simular el evento de teclado de volumen hacia arriba después de un breve retraso
 setTimeout(simulateVolumeUp, 1200);
-
 </script>
 </body>
 </html>
