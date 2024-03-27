@@ -213,7 +213,7 @@
     "key": "",
     "embed":"true",
     "url": "go:Sudlp",
-    "urlpc": "https://laligatech-live-usp-cwr.akamaized.net/live/clubes247-01/clubes247-01.isml/hdntl=exp=1709407786~acl=%2f*~data=hdntl~hmac=51bcf2cb6f78b2dd916f9bfb4c9da57fca955e04516e46542bad7700a7111d33/clubes247-01-audio_track_0_0_spa=96000-video_track=6000000.m3u8",
+    "urlpc": "https://laligatech-live-usp-cwr.akamaized.net/live/clubes247-01/clubes247-01.isml/playlist.m3u8?hdnts=exp=1711571855~acl=*~hmac=a8c401913e27356f3d756478a48a90848fb65656ab168d2b1b9b1e32dae889b4",
     "iframe":"no"
 
   },
