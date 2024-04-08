@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fullscreen Iframe</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #fullscreenIframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
+</head>
+<body>
+<iframe id="fullscreenIframe" src="//ok.ru/videoembed/7174713646708" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const iframe = document.getElementById('fullscreenIframe');
+
+    // Función para cambiar el tamaño del iframe para que ocupe toda la pantalla
+    function resizeIframe() {
+      iframe.style.width = window.innerWidth + 'px';
+      iframe.style.height = window.innerHeight + 'px';
+    }
+
+    // Llamada a la función al cargar la página y en cada cambio de tamaño de ventana
+    resizeIframe();
+    window.addEventListener('resize', resizeIframe);
+  });
+</script>
+</body>
+</html>
